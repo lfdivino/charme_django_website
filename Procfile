@@ -1,0 +1,1 @@
+web: gunicorn charme.wsgi --log-file -
