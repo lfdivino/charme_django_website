@@ -18,6 +18,7 @@ from django.contrib import admin
 from .core.views import home, index, contato, about
 
 urlpatterns = [
+    url(r'^$', home, name='home'),
     url(r'^index/', index, name='index'),
     url(r'^contato/', contato, name='contato'),
     url(r'^about/', about, name='about'),

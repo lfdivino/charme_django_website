@@ -3,7 +3,6 @@ from .models import Posts
 
 
 def home(request):
-
     return render(request, 'index.html')
 
 
