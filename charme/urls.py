@@ -19,7 +19,7 @@ from .core.views import home, index, contato, about
 
 urlpatterns = [
     url(r'^$', home, name='home'),
-    url(r'^index/', index, name='index'),
+    url(r'^entrada/', index, name='entrada'),
     url(r'^contato/', contato, name='contato'),
     url(r'^about/', about, name='about'),
     #url(r'^', include('charme.core.urls')),
