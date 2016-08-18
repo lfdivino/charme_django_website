@@ -13,10 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from .core.views import home, index, contato, about
 
 urlpatterns = [
-    url(r'^$', 'charme.core.views.home'),
+    url(r'^index/', index, name='index'),
+    url(r'^contato/', contato, name='contato'),
+    url(r'^about/', about, name='about'),
+    #url(r'^', include('charme.core.urls')),
     url(r'^admin/', admin.site.urls),
 ]

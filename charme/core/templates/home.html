@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- START #fh5co-hero -->
+    <aside id="fh5co-hero" class="fh5co-hero-header-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="fh5co-hero-wrap">
+                        <div class="fh5co-hero-intro">
+                                <h2>Sua dose diária<span></span></h2>
+                                <h1>Charme Todo Dia</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="fh5co-main">
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" id="fh5co-content">
+                    {% for post in posts %}
+                        <div class="row-posts">
+                            <div class="row-fields-posts">
+                                <h2 class="post-title">{{ post.title }}</h2>
+                            </div>
+                            <div class="row-fields-posts">
+                                <img src="{{ post.imagem }}" width="100%" height="200px"/>
+                            </div>
+                            <div class="row-fields-posts">
+                                <p>{{ post.body }}</p>
+                            </div>
+                            <div class="row-post-footer">
+                                <p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-4" id="fh5co-sidebar">
+
+                    <div class="fh5co-side-section fh5co-nav-links">
+                        <h2>Redes Sociais</h2>
+                        <div class="row">
+                            <u class="fh5co-social-icons">
+                                <li style="color: #fff;"><a href="#"><i class="ti-facebook"></i></a></li>
+                                <li style="color: #fff;"><a href="#"><i class="ti-youtube"></i></a></li>
+                                <li style="color: #fff;"><a href="#"><i class="ti-instagram"></i></a></li>
+                            </u>
+                        </div>
+                    </div>
+                    <div class="fh5co-spacer fh5co-spacer-sm"></div>
+                    <div class="fh5co-side-section">
+                         <h2>Página Facebook</h2>
+                         <h3>Não esqueça também de curtir nossa página no facebook onde diariamente publicamos nossas novidades, assim como fotos, videos, eventos e muito mais!</h3>
+                         <div class="fb-page" data-href="https://www.facebook.com/charmetododia" data-tabs="timeline" data-width="400" data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/charmetododia" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/charmetododia">Charme Todo Dia</a></blockquote></div>
+                    </div>
+                    <div class="fh5co-spacer fh5co-spacer-sm"></div>
+
+                </div>
+            </div>
+            <div class="fh5co-spacer fh5co-spacer-md"></div>
+        </div>
+
+    </section>
+{% endblock %}
