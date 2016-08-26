@@ -9,7 +9,7 @@
                     <div class="fh5co-hero-wrap">
                         <div class="fh5co-hero-intro">
                                 <h2>Sua dose diária<span></span></h2>
-                                <h1>Charme Todo Dia</h1>
+                                <h1>Charmé Todo Dia</h1>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,37 @@
                 </div>
                 <div class="fh5co-spacer fh5co-spacer-sm"></div>
                 <div class="col-md-6">
+                    {% if flag_enviado %}
+                        <div class="alert alert-success" role="alert">Sua mensagem foi enviada com sucesso!</div>
+                    {% endif %}
                     <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="row fields-contato">
+                            {{ form.name.errors }}
+                            {{ form.name }}
+                        </div>
+                        <div class="row fields-contato">
+                            {{ form.phone.errors }}
+                            {{ form.phone }}
+                        </div>
+                        <div class="row fields-contato">
+                            {{ form.email.errors }}
+                            {{ form.email }}
+                        </div>
+                        <div class="row fields-contato">
+                            {{ form.message.errors }}
+                            {{ form.message }}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="submit" class="btn btn-primary btn-lg " value="Enviar">
+                            </div>
+                            <div class="col-md-8"></div>
+
+                        </div>
+                    </form>
+                    <!--<form action="#" method="post">
+                        {% csrf_token %}
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Nome Completo</label>
@@ -85,7 +115,7 @@
                             </div>
                         </div>
 
-                    </form>
+                    </form>-->
 
                 </div>
                 <div class="col-md-6">

@@ -1623,4 +1623,16 @@ a > img.fh5co-align-center {
     -moz-box-shadow: 3px 3px 2px 0px rgba(204,204,204,1);
     box-shadow: 3px 3px 2px 0px rgba(204,204,204,1);
 }
+
+.fields-contato input, textarea {
+    width: 100%;
+    box-shadow: none !important;
+    border: 2px solid #ccc;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 3%;
+}
 /*# sourceMappingURL=style.css.map */
