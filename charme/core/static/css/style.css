@@ -1635,4 +1635,12 @@ a > img.fh5co-align-center {
     display: block;
     margin-bottom: 3%;
 }
+
+.menu-header {
+  background-color: #fff;
+}
+
+.menu-header a {
+  color: #2e2e2e;
+}
 /*# sourceMappingURL=style.css.map */
