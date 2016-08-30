@@ -22,6 +22,30 @@
 
     <section>
         <div class="container">
+
+            <div class="row news-blog">
+                <div class="col-md-3">
+                    <h2>Ultimas do Blog!</h2>
+                </div>
+                <div class="col-md-3">
+                    <img src="" width="100%" height="150px">
+                    <h3>Titulo Post</h3>
+                    <p>Texto previa, bla bla bla...</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="" width="100%" height="150px">
+                    <h3>Titulo Post</h3>
+                    <p>Texto previa, bla bla bla...</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="" width="100%" height="150px">
+                    <h3>Titulo Post</h3>
+                    <p>Texto previa, bla bla bla...</p>
+                </div>
+            </div>
+
+            <div class="fh5co-spacer fh5co-spacer-sm"></div>
+            
             <div class="row">
                 <div class="col-md-8" id="fh5co-content">
                     {% for post in posts %}
@@ -30,7 +54,7 @@
                                 <h2 class="post-title">{{ post.title }}</h2>
                             </div>
                             <div class="row-fields-posts">
-                                <img src="{{ post.imagem }}" width="100%" height="200px"/>
+                                <img src="{{ post.imagem }}" width="100%" height="300px"/>
                             </div>
                             <div class="row-fields-posts">
                                 <p>{{ post.body }}</p>

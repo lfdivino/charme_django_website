@@ -1652,4 +1652,16 @@ a > img.fh5co-align-center {
     background-size: cover;
     margin-top: 5px;
 }
+
+.news-blog {
+    color: #610839;
+}
+
+.news-blog p {
+    color: #2e2e2e;
+}
+
+.news-blog h2 {
+    margin-top: 25%;
+}
 /*# sourceMappingURL=style.css.map */

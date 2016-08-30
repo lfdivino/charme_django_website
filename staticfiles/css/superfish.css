@@ -1,7 +1,7 @@
 /*** ESSENTIAL STYLES ***/
 
 .sf-menu, .sf-menu * {
-	margin: 12px;
+    margin-top: 10px;
 	padding: 0;
 	list-style: none;
 }
