@@ -14,18 +14,35 @@ class Author(models.Model):
         return self.name
 
 
-class Posts(models.Model):
+class PostsHome(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
     imagem = models.CharField('Imagem do Post', max_length=255)
     body = models.TextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Posts da Home'
+        verbose_name = 'Post da Home'
+
+    def __str__(self):
+        return self.title
+
+
+class PostsBlog(models.Model):
+
+    title = models.CharField('Titulo', max_length=200)
+    imagem = models.CharField('Imagem do Post', max_length=255)
+    video = models.CharField('Video', max_length=255)
+    body = models.TextField('Corpo do Post')
+    created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
+    updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
     author = models.ForeignKey(Author)
 
     class Meta:
-        verbose_name_plural = 'Posts'
-        verbose_name = 'Post'
+        verbose_name_plural = 'Posts do Blog'
+        verbose_name = 'Post do Blog'
 
     def __str__(self):
         return self.title

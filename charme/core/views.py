@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Posts, Contato
+from .models import PostsHome, Contato
 from .forms import ContatoForm
 
 
@@ -8,7 +8,7 @@ def home(request):
 
 
 def index(request):
-    posts = Posts.objects.all()
+    posts = PostsHome.objects.all()
     context = {
         'posts': posts,
     }

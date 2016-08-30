@@ -34,7 +34,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
-  color: #2e2e2e;
+  color: #333333;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -209,7 +209,7 @@ textarea {
 #fh5co-header-section.fh5co-scrolled {
   padding: 0px 0;
   background: rgba(0, 0, 0, 0.8);
-  background: white;
+  background: #fffee8;
   -webkit-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
   -moz-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
   -ms-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
@@ -238,10 +238,10 @@ textarea {
 }
 
 #fh5co-logo {
-  font-size: 20px;
-  margin: 16px 0 0 0;
-  padding: 0;
-  font-weight: bold;
+    font-size: 24px;
+    margin: 50px 20px 0 30px;
+    padding: 0;
+    font-weight: bold;
 }
 
 #fh5co-logo h2 {
@@ -694,7 +694,7 @@ body.inner-page #fh5co-hero .fh5co-hero-wrap {
   padding-top: 50px;
   z-index: 102;
   position: relative;
-  background: #ffffff;
+  background: #fffee8;
 }
 @media screen and (max-width: 768px) {
   #fh5co-main {
@@ -1637,10 +1637,19 @@ a > img.fh5co-align-center {
 }
 
 .menu-header {
-  background-color: #fff;
+  background-color: #fffee8;
 }
 
 .menu-header a {
   color: #2e2e2e;
+}
+
+.logo-menu {
+    background-image: url(../images/logo_charme.png);
+    width: 140px;
+    height: 130px;
+    float: left;
+    background-size: cover;
+    margin-top: 5px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,12 +4,14 @@
     <div class="container menu-header">
 
         <!-- START #fh5co-logo -->
-        <h1 id="fh5co-logo" class="pull-left"><a href="index.html">Charmé</a></h1>
+        <h1 id="fh5co-logo" class="pull-left"><a href="index.html">Home</a></h1>
 
         <!-- START #fh5co-menu-wrap -->
         <nav id="fh5co-menu-wrap" role="navigation">
+
             <ul class="sf-menu" id="fh5co-primary-menu">
-                <li><a href="{% url 'index' %}">Home</a></li>
+                <div class="logo-menu"></div>
+                <li><a href="{% url 'index' %}">Blog</a></li>
                 <li><a href="{% url 'about' %}">Sobre Nós</a></li>
                 <li><a href="{% url 'contato' %}">Contato</a></li>
             </ul>
