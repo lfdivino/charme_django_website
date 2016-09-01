@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PostsHome, Contato
+from .models import PostsHome, PostsBlog, Contato
 from .forms import ContatoForm
 
 
@@ -9,10 +9,21 @@ def home(request):
 
 def index(request):
     posts = PostsHome.objects.all()
+    posts_blog = PostsBlog.objects.all().order_by('created_date')[:3]
+    context = {
+        'posts': posts,
+        'posts_blogs': posts_blog,
+    }
+    return render(request, 'home.html', context)
+
+
+def blog(request):
+    posts = PostsBlog.objects.all()
     context = {
         'posts': posts,
     }
-    return render(request, 'home.html', context)
+
+    return render(request, 'blog.html', context)
 
 
 def contato(request):
