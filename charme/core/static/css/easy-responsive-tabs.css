@@ -17,7 +17,7 @@
 
 .resp-tabs-container {
     padding: 0px;
-    background-color: #fffee8;
+    background-color: #fff;
     clear: left;
 }
 
@@ -52,7 +52,7 @@ h2.resp-accordion {
 
 .resp-tab-active {
     border-bottom: none;
-    background-color: #fffee8;
+    background-color: #fff;
 }
 
 .resp-content-active, .resp-accordion-active {
@@ -102,7 +102,7 @@ h2.resp-tab-title:last-child {
 
 .resp-vtabs .resp-tabs-container {
     padding: 0px;
-    background-color: #fffee8;
+    background-color: #fff;
     /*border: 1px solid #ebebeb;*/
     border-left: 1px solid #ebebeb;
     float: left;

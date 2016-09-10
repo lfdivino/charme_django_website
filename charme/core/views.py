@@ -8,13 +8,21 @@ def home(request):
 
 
 def index(request):
-    posts = PostsHome.objects.all()
+    posts = PostsHome.objects.all()[:3]
     posts_blog = PostsBlog.objects.all().order_by('created_date')[:3]
     context = {
         'posts': posts,
         'posts_blogs': posts_blog,
     }
     return render(request, 'home.html', context)
+
+
+def novidades(request):
+    novidades = PostsHome.objects.all()
+    context = {
+        'novidades': novidades,
+    }
+    return render(request, 'novidades.html', context)
 
 
 def blog(request):
