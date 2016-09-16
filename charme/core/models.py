@@ -1,5 +1,6 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
 
 class Author(models.Model):
 
@@ -18,7 +19,7 @@ class PostsHome(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
     imagem = models.CharField('Imagem do Post', max_length=255)
-    body = models.TextField('Corpo do Post')
+    body = RichTextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
 
@@ -35,7 +36,7 @@ class PostsBlog(models.Model):
     title = models.CharField('Titulo', max_length=200)
     imagem = models.CharField('Imagem do Post', max_length=255)
     video = models.CharField('Video', max_length=255)
-    body = models.TextField('Corpo do Post')
+    body = RichTextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
     author = models.ForeignKey(Author)

@@ -25,6 +25,16 @@ def novidades(request):
     return render(request, 'novidades.html', context)
 
 
+def novidades_post(request, novidade_id=None):
+    if novidade_id:
+        post = PostsHome.objects.filter(id=novidade_id)
+
+    context = {
+        'posts': post,
+    }
+    return render(request, 'novidades-post.html', context)
+
+
 def blog(request):
     posts = PostsBlog.objects.all()
     context = {
@@ -32,6 +42,15 @@ def blog(request):
     }
 
     return render(request, 'blog.html', context)
+
+
+def blog_post(request, post_id=None):
+    posts = PostsBlog.object.filter(id=post_id)
+    context = {
+        'posts': posts,
+    }
+
+    return render(request, 'blog-post.html', context)
 
 
 def contato(request):

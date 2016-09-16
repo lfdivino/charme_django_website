@@ -39,17 +39,11 @@
                     {% for post in posts %}
                         <div class="row-posts">
                             <div class="row-fields-posts">
-                                <h2 class="post-title">{{ post.title }}</h2>
+                                <a href="{% url '' post.id %}"><h2 class="post-title">{{ post.title }}</h2></a>
                             </div>
                             {% if post.imagem %}
                                 <div class="row-fields-posts">
-                                    <img src="{{ post.imagem }}" width="100%" height="400px"/>
-                                </div>
-                            {% endif %}
-
-                            {% if post.video %}
-                                <div class="row-fields-posts">
-                                    <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+                                    <a href="{% url '' post.id %}"><img src="{{ post.imagem }}" width="100%" height="400px"/></a>
                                 </div>
                             {% endif %}
                             <div class="row-fields-posts">

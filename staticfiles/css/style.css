@@ -787,7 +787,6 @@ body.inner-page #fh5co-hero .fh5co-hero-wrap {
 
 #fh5co-main {
   margin-top: 500px;
-  padding-top: 50px;
   z-index: 102;
   position: relative;
   background: #fff;
@@ -1704,12 +1703,18 @@ a > img.fh5co-align-center {
     line-height: normal;
 }
 
+.fh5co-side-section h2 {
+    color: #610839;
+    border-bottom: 1px solid #cccccc;
+}
+
 #fh5co-content {
   padding-right: 2%;
 }
 
 #fh5co-content h2 {
     color: #610839;
+    border-bottom: 1px solid #cccccc;
 }
 
 .about-text {
@@ -1753,22 +1758,25 @@ a > img.fh5co-align-center {
     margin-top: 5px;
 }
 
-.news-blog {
-    color: #610839;
-}
-
-.news-blog p {
-    color: #2e2e2e;
+.news-posts-blog {
+  background-color: #610839;
+  color: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .news-blog h2 {
-    margin-top: 25%;
+    margin-top: 40%;
+    font-size: 34px;
+    font-weight: 800;
 }
 
 .imgWrap {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .imgWrap p {
