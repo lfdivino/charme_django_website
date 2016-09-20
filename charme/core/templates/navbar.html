@@ -1,27 +1,17 @@
-{% load static %}
-<!-- START #fh5co-header -->
-<header id="fh5co-header-section" role="header" class="" >
-    <div class="container menu-header">
-        <div class="row">
-            <div class="col-md-5">
+<div id="fh5co-header">
+    <header id="fh5co-header-section">
+        <div class="container">
+            <div class="nav-header">
+                <a href="{% url 'index' %}"><img src="/static/images/charme_1.png" style="height: 80px; float: left"/></a>
                 <!-- START #fh5co-menu-wrap -->
-                <nav id="fh5co-menu-wrap-left" role="navigation">
-
-                    <ul class="sf-menu" id="fh5co-primary-menu-left">
+                <nav id="fh5co-menu-wrap" role="navigation">
+                    <ul class="sf-menu" id="fh5co-primary-menu">
+                    <!-- 	<li>
+                            <a class="active" href="index.html">Home</a>
+                        </li> -->
                         <li><a href="{% url 'novidades' %}">Novidades</a></li>
                         <li><a href="{% url 'blog' %}">Blog</a></li>
                         <li><a href="{% url 'index' %}">Comprar</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-2">
-                <a href="{% url 'index' %}"><div class="logo-menu"></div></a>
-            </div>
-            <div class="col-md-5">
-                <!-- START #fh5co-menu-wrap -->
-                <nav id="fh5co-menu-wrap-right" role="navigation">
-
-                    <ul class="sf-menu" id="fh5co-primary-menu-right">
                         <li><a href="{% url 'index' %}">Videos</a></li>
                         <li><a href="{% url 'about' %}">Sobre Nós</a></li>
                         <li><a href="{% url 'contato' %}">Contato</a></li>
@@ -29,5 +19,6 @@
                 </nav>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+</div>
+<!-- end:fh5co-header -->
