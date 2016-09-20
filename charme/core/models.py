@@ -2,6 +2,7 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
+
 class Author(models.Model):
 
     name = models.CharField('Nome', max_length=100)
@@ -19,6 +20,7 @@ class PostsHome(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
     imagem = models.CharField('Imagem do Post', max_length=255)
+    brief_body = models.TextField('Resumo da Novidade', max_length=200, default='Resumo do post da novidade.')
     body = RichTextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
@@ -36,6 +38,7 @@ class PostsBlog(models.Model):
     title = models.CharField('Titulo', max_length=200)
     imagem = models.CharField('Imagem do Post', max_length=255)
     video = models.CharField('Video', max_length=255)
+    brief_body = models.TextField('Resumo do Post', max_length=200, default='Resumo do post do blog.')
     body = RichTextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)

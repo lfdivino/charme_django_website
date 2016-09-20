@@ -29,18 +29,20 @@
 			</div>
 		</div>
 		<div class="row">
-			{% for post in posts %}
-				<div class="blog-inner">
-					<div class="image">
-						<a href="{% url '' post.id %}"><img src="{{ post.imagem }}" width="100%" height="400px"/></a>
+			{% for post in novidades %}
+				<div class="row-posts">
+					<div class="row-fields-posts">
+						<a href="{% url 'novidade-post' post.id %}"><h2 class="post-title">{{ post.title }}</h2></a>
 					</div>
-					<div class="desc desc2">
-						<a href="{% url '' post.id %}"><h3>{{ post.title }}</h3></a>
-						<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
-						<p>{{ post.brief_body }}</p>
-						<p><a href="{% url '' post.id %}" class="btn btn-primary btn-luxe-primary">Ver mais</a></p>
+					<div class="row-fields-posts">
+						<a href="{% url 'novidade-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="400px"/></a>
 					</div>
+					<div class="row-fields-posts">
+						<p>{% autoescape off %}{{ post.brief_body }}{% endautoescape %}</p>
+					</div>
+					<h2><a href="{% url 'novidade-post' post.id %}">Ver mais</a></h2>
 				</div>
+				<hr>
 			{% endfor %}
 		</div>
 	</div>
