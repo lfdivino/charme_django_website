@@ -515,6 +515,13 @@ figure {
   float: right;
 }
 
+#fh5co-menu-wrap-left {
+  position: relative;
+  z-index: 2;
+  display: block;
+  float: left;
+}
+
 #fh5co-primary-menu > li > ul li.active > a {
   color: #610839 !important;
 }
