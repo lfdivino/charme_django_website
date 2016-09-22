@@ -8,8 +8,8 @@ def home(request):
 
 
 def index(request):
-    posts = PostsHome.objects.all()[:2]
-    posts_blog = PostsBlog.objects.all().order_by('created_date')[:6]
+    posts = PostsHome.objects.all().order_by('created_date')[:7]
+    posts_blog = PostsBlog.objects.all().order_by('created_date')[:3]
     context = {
         'posts': posts,
         'posts_blogs': posts_blog,
