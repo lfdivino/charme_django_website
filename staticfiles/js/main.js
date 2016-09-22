@@ -184,11 +184,11 @@
 
 	var gridAutoHeight = function() {
 		if (!isiPhone() || !isiPad()) {
-			$('.row-half').css('height', $('.col-half').outerHeight()/2);
+			// $('.row-half').css('height', $('.col-half').outerHeight()/2);
 		}
 		$(window).resize(function(){
 			if (!isiPhone() && !isiPad()) {
-				$('.row-half').css('height', $('.col-half').outerHeight()/2);
+				// $('.row-half').css('height', $('.col-half').outerHeight()/2);
 			}
 		});
 	}

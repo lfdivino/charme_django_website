@@ -520,6 +520,7 @@ figure {
   z-index: 2;
   display: block;
   float: left;
+  padding-top: 5px;
 }
 
 #fh5co-primary-menu > li > ul li.active > a {
@@ -748,7 +749,7 @@ figure {
   }
 }
 .col-half.col-half-2 {
-  padding: 7em 3em;
+  padding: 6em 3em;
 }
 .col-half .btn-outline {
   background: none;
@@ -824,7 +825,7 @@ figure {
   }
 }
 .col-half.col-half-color .row-half .col-half-inner.col-half-inner-bg {
-  background: #F36363 !important;
+  background: #610839 !important;
 }
 .col-half.col-half-color .row-half .col-half-inner.col-half-inner-bg2 {
   background: #046FDB !important;
@@ -1038,7 +1039,7 @@ figure {
   content: '';
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-left: 20px solid #F36363;
+  border-left: 20px solid #610839;
   z-index: 9;
 }
 #fh5co-portfolio-section .portfolio-row-half .portfolio-grid-item-color .desc {

@@ -9,7 +9,7 @@ def home(request):
 
 def index(request):
     posts = PostsHome.objects.all()[:3]
-    posts_blog = PostsBlog.objects.all().order_by('created_date')[:3]
+    posts_blog = PostsBlog.objects.all().order_by('created_date')[:7]
     context = {
         'posts': posts,
         'posts_blogs': posts_blog,
@@ -18,9 +18,9 @@ def index(request):
 
 
 def novidades(request):
-    novidades = PostsHome.objects.all()
+    novidades_ids = PostsHome.objects.all()
     context = {
-        'novidades': novidades,
+        'novidades': novidades_ids,
     }
     return render(request, 'novidades.html', context)
 

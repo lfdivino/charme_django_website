@@ -21,61 +21,59 @@
 		</aside>
 		<div id="fh5co-contact-section">
 			<div class="container">
-				<form action="#">
-					<div class="row">
-						<div class="col-md-6 col-md-push-6">
-							<h3 class="section-title">Contato</h3>
-                            <p>Sua opinião é muito importante!</p>
-                            <p>Apreciamos muito o contato de nossos clientes e amigo, contatos comerciais também são muito bem vindos, mesmo um oi será respondido com um grande sorriso.</p>
-							<h3 class="section-title">Venha nos visitar também na loja</h3>
-							<ul class="contact-info">
-								<li><i class="icon-location-pin"></i>Avenida Andrômeda, 1462, 12230-001 São José dos Campos</li>
-								<li><i class="icon-mail"></i>tamaragomes.charme@gmail.com</li>
-								<li><i class="icon-globe2"></i>Seg-Sex: 09:00 às 18:00</li>
-								<li><i class="icon-globe2"></i>Sáb: 09:00 às 15:00</li>
-							</ul>
-						</div>
-						<div class="col-md-6 col-md-pull-6">
-                            {% if flag_enviado %}
-                                <div class="alert alert-success" role="alert">Sua mensagem foi enviada com sucesso!</div>
-                            {% endif %}
-                            <div class="row">
-                                <form action="#" method="POST">
-                                    {% csrf_token %}
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.name.errors }}
-                                            {{ form.name }}
-                                        </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-push-6">
+                        <h3 class="section-title">Contato</h3>
+                        <p>Sua opinião é muito importante!</p>
+                        <p>Apreciamos muito o contato de nossos clientes e amigo, contatos comerciais também são muito bem vindos, mesmo um oi será respondido com um grande sorriso.</p>
+                        <h3 class="section-title">Venha nos visitar também na loja</h3>
+                        <ul class="contact-info">
+                            <li><i class="icon-location-pin"></i>Avenida Andrômeda, 1462, 12230-001 São José dos Campos</li>
+                            <li><i class="icon-mail"></i>tamaragomes.charme@gmail.com</li>
+                            <li><i class="icon-globe2"></i>Seg-Sex: 09:00 às 18:00</li>
+                            <li><i class="icon-globe2"></i>Sáb: 09:00 às 15:00</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-md-pull-6">
+                        {% if flag_enviado %}
+                            <div class="alert alert-success" role="alert">Sua mensagem foi enviada com sucesso!</div>
+                        {% endif %}
+                        <div class="row">
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form.name.errors }}
+                                        {{ form.name }}
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.phone.errors }}
-                                            {{ form.phone }}
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form.phone.errors }}
+                                        {{ form.phone }}
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.email.errors }}
-                                            {{ form.email }}
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form.email.errors }}
+                                        {{ form.email }}
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.message.errors }}
-                                            {{ form.message }}
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form.message.errors }}
+                                        {{ form.message }}
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="submit" value="Enviar" class="btn btn-primary">
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Enviar" class="btn btn-primary">
                                     </div>
-                                </form>
-                            </div>
-						</div>
-					</div>
-				</form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 		<div id="map" class="fh5co-map">

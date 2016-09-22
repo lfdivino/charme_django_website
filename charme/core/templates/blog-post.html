@@ -22,25 +22,27 @@
 <div id="fh5co-blog-section">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-				<i class="sl-icon-note"></i>
-				<h2>Read Our Blog</h2>
-				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-			</div>
-		</div>
-		<div class="row">
 			{% for post in posts %}
-				<div class="blog-inner">
-					<a href="{% url 'blog-post' post.id %}"><h3>{{ post.title }}</h3></a>
-						<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
-					<div class="image">
-						<a href="{% url 'blog-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="400px"/></a>
+				<div class="row-posts">
+					<div class="row-fields-posts">
+						<h2 class="post-title">{{ post.title }}</h2>
 					</div>
-					<div class="desc desc2">
-						<p>{{ post.brief_body }}</p>
-						<p><a href="{% url 'blog-post' post.id %}" class="btn btn-primary btn-luxe-primary">Ver mais</a></p>
+					<div class="row-post-footer">
+						<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
+					</div>
+					<div class="row-fields-posts">
+						<img src="{{ post.imagem }}" width="100%" height="400px"/>
+					</div>
+					{% if post.video %}
+						<div class="row-fields-posts">
+							<iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+						</div>
+					{% endif %}
+					<div class="row-fields-posts">
+						<p>{% autoescape off %}{{ post.body }}{% endautoescape %}</p>
 					</div>
 				</div>
+				<hr>
 			{% endfor %}
 		</div>
 	</div>
