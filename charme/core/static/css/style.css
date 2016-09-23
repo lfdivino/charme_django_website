@@ -749,7 +749,7 @@ figure {
   }
 }
 .col-half.col-half-2 {
-  padding: 3em;
+  padding: 2em 3em 0 3em;
 }
 .col-half .btn-outline {
   background: none;
@@ -1900,4 +1900,7 @@ figure {
   background: url(../images/hourglass.svg) center no-repeat #222222;
 }
 
+.featured-inner .desc p {
+  font-size: 16px;
+}
 /*# sourceMappingURL=style.css.map */
