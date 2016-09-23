@@ -837,7 +837,7 @@ figure {
 		width: 100%;
 	}
 	&.col-half-2{
-		padding: 7em 3em;
+		padding: 2em 3em 0 3em;
 	}
 	.btn-outline{
 		background: none;
@@ -861,7 +861,7 @@ figure {
 		// text-transform: uppercase;
 	}
 	.featured-inner{
-		margin-bottom: 40px;
+		margin-bottom: 35px;
 		i{
 			float: left;
 			font-size: 40px;
@@ -872,6 +872,9 @@ figure {
 			h3{
 				font-size: 18px;
 				margin-bottom: 15px;
+			}
+			p{
+				font-size: 16px;
 			}
 		}
 	}
