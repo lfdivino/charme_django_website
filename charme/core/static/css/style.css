@@ -780,7 +780,7 @@ figure {
   padding-left: 3em;
 }
 .col-half .featured-inner .desc h3 {
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: 15px;
 }
 .col-half.col-half-color {
@@ -1902,5 +1902,6 @@ figure {
 
 .featured-inner .desc p {
   font-size: 16px;
+  text-align: justify;
 }
 /*# sourceMappingURL=style.css.map */
