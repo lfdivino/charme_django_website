@@ -777,7 +777,7 @@ figure {
   color: #610839;
 }
 .col-half .featured-inner .desc {
-  padding-left: 1em;
+  padding-left: 0;
 }
 .col-half .featured-inner .desc h3 {
   font-size: 19px;
