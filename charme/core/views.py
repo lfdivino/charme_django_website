@@ -45,7 +45,7 @@ def blog(request):
 
 
 def blog_post(request, post_id=None):
-    posts = PostsBlog.object.filter(id=post_id)
+    posts = PostsBlog.objects.filter(id=post_id)
     context = {
         'posts': posts,
     }

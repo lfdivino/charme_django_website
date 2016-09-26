@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^novidades/post/(?P<novidade_id>[0-9]+)/$', novidades_post, name='novidade-post'),
     url(r'^contato/', contato, name='contato'),
     url(r'^about/', about, name='about'),
-    url(r'^blog/', blog, name='blog'),
+    url(r'^blog/$', blog, name='blog'),
     url(r'^blog/post/(?P<post_id>[0-9]+)/$', blog_post, name='blog-post'),
     #url(r'^', include('charme.core.urls')),
     url(r'^admin/', admin.site.urls),

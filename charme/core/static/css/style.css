@@ -945,6 +945,7 @@ figure {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   width: 100%;
+    background-color: #F36363;
 }
 #fh5co-portfolio-section .portfolio-row-half .portfolio-grid-item {
   background-size: cover;
@@ -1903,5 +1904,14 @@ figure {
 .featured-inner .desc p {
   font-size: 16px;
   text-align: justify;
+}
+
+.row-fields-posts {
+    margin-bottom: 3em;
+    text-align: justify;
+}
+
+.image {
+    margin-bottom: 3em;
 }
 /*# sourceMappingURL=style.css.map */

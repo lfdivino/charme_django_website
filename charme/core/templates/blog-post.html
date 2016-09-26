@@ -19,15 +19,13 @@
 		</ul>
 	</div>
 </aside>
-<div id="fh5co-blog-section">
+<div id="fh5co-blog-section" style="margin-top: 3em">
 	<div class="container">
 		<div class="row">
 			{% for post in posts %}
 				<div class="row-posts">
 					<div class="row-fields-posts">
 						<h2 class="post-title">{{ post.title }}</h2>
-					</div>
-					<div class="row-post-footer">
 						<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
 					</div>
 					<div class="row-fields-posts">
