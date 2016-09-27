@@ -51,6 +51,19 @@
 				{% endfor %}
 			</div>
 		</div>
+		<div class="pagination">
+			<span class="step-links">
+				{% if posts.has_previous %}
+					<a href="?page={{ novidades.previous_page_number }}">Mais Recentes</a>
+				{% endif %}
+				<span class="current">
+					Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+				</span>
+				{% if posts.has_next %}
+					<a href="?page={{ posts.next_page_number }}">Mais antigas</a>
+				{% endif %}
+			</span>
+		</div>
 	</div>
 </div>
 {% endblock %}

@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import PostsHome, PostsBlog, Contato
 from .forms import ContatoForm
@@ -8,8 +9,8 @@ def home(request):
 
 
 def index(request):
-    posts = PostsHome.objects.all().order_by('created_date')[:7]
-    posts_blog = PostsBlog.objects.all().order_by('created_date')[:3]
+    posts = PostsHome.objects.all().order_by('-created_date')[:7]
+    posts_blog = PostsBlog.objects.all().order_by('-created_date')[:3]
     context = {
         'posts': posts,
         'posts_blogs': posts_blog,
@@ -17,10 +18,20 @@ def index(request):
     return render(request, 'home.html', context)
 
 
-def novidades(request):
-    novidades_ids = PostsHome.objects.all()
+def novidades_page(request):
+    novidades_ids = PostsHome.objects.all().order_by('-created_date')
+    paginator = Paginator(novidades_ids, 8)
+
+    page = request.GET.get('page')
+    try:
+        novidades = paginator.page(page)
+    except PageNotAnInteger:
+        novidades = paginator.page(1)
+    except EmptyPage:
+        novidades = paginater.page(paginator.num_pages)
+
     context = {
-        'novidades': novidades_ids,
+        'novidades': novidades,
     }
     return render(request, 'novidades.html', context)
 
@@ -35,8 +46,18 @@ def novidades_post(request, novidade_id=None):
     return render(request, 'novidades-post.html', context)
 
 
-def blog(request):
-    posts = PostsBlog.objects.all()
+def blog_page(request):
+    posts_ids = PostsBlog.objects.all().order_by('-created_date')
+    paginator = Paginator(posts_ids, 8)
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     context = {
         'posts': posts,
     }

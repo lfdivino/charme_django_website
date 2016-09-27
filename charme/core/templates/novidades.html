@@ -44,6 +44,19 @@
 				<hr>
 			{% endfor %}
 		</div>
+		<div class="pagination">
+			<span class="step-links">
+				{% if novidades.has_previous %}
+					<a href="?page={{ novidades.previous_page_number }}">Mais Recentes</a>
+				{% endif %}
+				<span class="current">
+					Página {{ novidades.number }} de {{ novidades.paginator.num_pages }}
+				</span>
+				{% if novidades.has_next %}
+					<a href="?page={{ novidades.next_page_number }}">Mais antigas</a>
+				{% endif %}
+			</span>
+		</div>
 	</div>
 </div>
 {% endblock %}
