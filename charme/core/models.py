@@ -19,6 +19,7 @@ class Author(models.Model):
 class PostsHome(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
+    imagem_vitrine = CharField('Imagem vitrine home', max_length=255)
     imagem = models.CharField('Imagem do Post', max_length=255)
     brief_body = models.TextField('Resumo da Novidade', max_length=200, default='Resumo do post da novidade.')
     body = RichTextField('Corpo do Post')
@@ -36,8 +37,9 @@ class PostsHome(models.Model):
 class PostsBlog(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
+    imagem_vitrine = CharField('Imagem vitrine home', max_length=255)
     imagem = models.CharField('Imagem do Post', max_length=255)
-    video = models.CharField('Video', max_length=255)
+    video = models.CharField('Video', max_length=255, blank=True)
     brief_body = models.TextField('Resumo do Post', max_length=200, default='Resumo do post do blog.')
     body = RichTextField('Corpo do Post')
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
