@@ -63,7 +63,7 @@
                 </div>
             </div>
 			{% for post in posts_blogs %}
-				<a href="{% url 'blog-post' post.id %}" class="col-half-inner grid-item" style="background-image: url({{ post.imagem }});">
+				<a href="{% url 'blog-post' post.id %}" class="col-half-inner grid-item" style="background-image: url({{ post.imagem_vitrine }});">
 					<div class="desc2">
 						<h3>{{ post.title }}</h3>
 						<span>{{ post.brief_body }}</span>
@@ -125,7 +125,7 @@
 			</div>
 		</div>
         {% for post in posts %}
-            <a href="{% url 'novidade-post' post.id %}" class="portfolio-grid-item" style="background-image: url({{ post.imagem }});">
+            <a href="{% url 'novidade-post' post.id %}" class="portfolio-grid-item" style="background-image: url({{ post.imagem_vitrine }});">
                 <div class="desc2">
                     <h3>{{ post.title }}</h3>
                     <span>{{ post.brief_body }}</span>
