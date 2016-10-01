@@ -35,7 +35,7 @@
 						<a href="{% url 'blog-post' post.id %}"><h3>{{ post.title }}</h3></a>
 							<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
 						<div class="image">
-							<a href="{% url 'blog-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="400px"/></a>
+							<a href="{% url 'blog-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="300px"/></a>
 						</div>
 						<div class="desc desc2">
 							<p>{{ post.brief_body }}</p>
