@@ -67,3 +67,14 @@ class Contato(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Videos(models.Model):
+
+    titulo = models.CharField(u'Título', max_length=180)
+    link = models.CharField('Link', max_length=255)
+
+
+class ImagensSlideshow(models.Model):
+
+    link_imagem = models.CharField('Link da imagem', max_length=255)

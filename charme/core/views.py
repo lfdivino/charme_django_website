@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
-from .models import PostsHome, PostsBlog, Contato
+from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow
 from .forms import ContatoForm
 
 
@@ -11,9 +11,12 @@ def home(request):
 def index(request):
     posts = PostsHome.objects.all().order_by('-created_date')[:7]
     posts_blog = PostsBlog.objects.all().order_by('-created_date')[:3]
+    imagens_slideshow = ImagensSlideshow.objects.all().order_by('-id')[:4]
+
     context = {
         'posts': posts,
         'posts_blogs': posts_blog,
+        'imagens_slideshow': imagens_slideshow,
     }
     return render(request, 'home.html', context)
 
@@ -106,3 +109,22 @@ def contato(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def video(request):
+    videos_ids = Videos.objects.all().order_by('-id')
+    paginator = Paginator(videos_ids, 12)
+
+    page = request.GET.get('page')
+    try:
+        videos = paginator.page(page)
+    except PageNotAnInteger:
+        videos = paginator.page(1)
+    except EmptyPage:
+        videos = paginator.page(paginator.num_pages)
+
+    context = {
+        'videos': videos,
+    }
+
+    return render(request, 'videos.html', context)

@@ -5,50 +5,15 @@
 <aside id="fh5co-hero" class="js-fullheight">
 	<div class="flexslider js-fullheight">
 		<ul class="slides">
-		<li style="background-image: url(https://fbcdn-photos-c-a.akamaihd.net/hphotos-ak-xfl1/v/t1.0-0/p480x480/13962526_1719392594981800_7915074354043771809_n.jpg?oh=cfe4b9059f0c3cbfb5cb655487fd0ffe&oe=5848C210&__gda__=1480675323_0b67396a9a75699b3ab54b59fad5d07d);">
-			<div class="overlay-gradient"></div>
-			<div class="container">
-				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-					<div class="slider-text-inner">
-						<h2>Create A Motivational Template</h2>
-						<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+			{% for imagem in imagens_slideshow %}
+				<li style="background-image: url({{imagem.link_imagem}});">
+					<div class="overlay-gradient"></div>
+					<div class="container">
+						<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+						</div>
 					</div>
-				</div>
-			</div>
-		</li>
-		<li style="background-image: url(/static/images/slide_2.jpg);">
-			<div class="overlay-gradient"></div>
-			<div class="container">
-				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-					<div class="slider-text-inner">
-						<h2>Start Practicing Your Course</h2>
-						<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
-					</div>
-				</div>
-			</div>
-		</li>
-		<li style="background-image: url(/static/images/slide_3.jpg);">
-			<div class="overlay-gradient"></div>
-			<div class="container">
-				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-					<div class="slider-text-inner">
-						<h2>Start Your Startup With This Template</h2>
-						<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
-					</div>
-				</div>
-			</div>
-		</li>
-		<li style="background-image: url(/static/images/slide_4.jpg);">
-			<div class="overlay-gradient"></div>
-			<div class="container">
-				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-					<div class="slider-text-inner">
-						<h2>Surf With Free &amp; Unlimited Template</h2>
-						<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
-					</div>
-				</div>
-			</div>
-		</li>
+				</li>
+			{% endfor %}
 		</ul>
 	</div>
 </aside>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<aside id="fh5co-hero" class="js-fullheight">
+	<div class="flexslider js-fullheight">
+		<ul class="slides">
+		<li style="background-image: url(/static/images/slide_3.jpg);">
+			<div class="overlay-gradient"></div>
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+					<div class="slider-text-inner desc">
+						<h2 class="heading-section">Vídeos</h2>
+						<!--<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>-->
+					</div>
+				</div>
+			</div>
+		</li>
+		</ul>
+	</div>
+</aside>
+<div id="fh5co-blog-section" style="margin-top: 3em">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+				<h2>Vídeos</h2>
+				<p>Confira aqui os vídeos da CHARMÉ.</p>
+			</div>
+		</div>
+		{% if videos %}
+			<div class="row">
+
+				{% for video in videos %}
+					<div class="col-md-4">
+						<h3 style="text-align: center;">{{video.titulo}}</h3>
+						<iframe width="360" height="200" src="{{video.link}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="pagination">
+				<span class="step-links">
+					{% if videos.has_previous %}
+						<a href="?page={{ novidades.previous_page_number }}">Mais Recentes</a>
+					{% endif %}
+					<span class="current">
+						Página {{ videos.number }} de {{ videos.paginator.num_pages }}
+					</span>
+					{% if videos.has_next %}
+						<a href="?page={{ novidades.next_page_number }}">Mais antigas</a>
+					{% endif %}
+				</span>
+			</div>
+		{% else %}
+			<div class="row">
+				<div class="col-md-12">
+					<p>Não há vídeos cadastrados</p>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

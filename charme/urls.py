@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .core.views import home, index, contato, about, blog_page, blog_post, novidades_page, novidades_post
+from .core.views import home, index, contato, about, blog_page, blog_post, novidades_page, novidades_post, video
 
 urlpatterns = [
     url(r'^$', home, name='home'),
@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^about/', about, name='about'),
     url(r'^blog/$', blog_page, name='blog'),
     url(r'^blog/post/(?P<post_id>[0-9]+)/$', blog_post, name='blog-post'),
+    url(r'^videos/$', video, name='videos'),
     #url(r'^', include('charme.core.urls')),
     url(r'^admin/', admin.site.urls),
 ]
