@@ -73,6 +73,7 @@ class Videos(models.Model):
 
     titulo = models.CharField(u'Título', max_length=180)
     link = models.CharField('Link', max_length=255)
+    video_destaque = models.BooleanField(u'Vídeo Destaque', default=False)
 
 
 class ImagensSlideshow(models.Model):

@@ -112,8 +112,8 @@ def about(request):
 
 
 def video(request):
-    videos_ids = Videos.objects.all().order_by('-id')[1:]
-    video_destaque = Videos.objects.all().order_by('-id')[0]
+    videos_ids = Videos.objects.all().order_by('-id')
+    video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
     paginator = Paginator(videos_ids, 12)
 
     page = request.GET.get('page')
@@ -126,7 +126,7 @@ def video(request):
 
     context = {
         'videos': videos,
-        'video_destaque': video_destaque,
+        'video_destaque': video_destaque[0] if video_destaque else False,
     }
 
     return render(request, 'videos.html', context)
