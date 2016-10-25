@@ -75,7 +75,22 @@ class Videos(models.Model):
     link = models.CharField('Link', max_length=255)
     video_destaque = models.BooleanField(u'Vídeo Destaque', default=False)
 
+    class Meta:
+        verbose_name_plural = 'Vídeos'
+        verbose_name = 'Vídeo'
+        ordering = ('created_at',)
+
+    def __str__(self):
+        return self.titulo
+
 
 class ImagensSlideshow(models.Model):
 
     link_imagem = models.CharField('Link da imagem', max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Imagens Slideshow'
+        verbose_name = 'Imagem Slideshow'
+
+    def __str__(self):
+        return self.link_imagem
