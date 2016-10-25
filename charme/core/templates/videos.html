@@ -45,13 +45,13 @@
 			<div class="pagination">
 				<span class="step-links">
 					{% if videos.has_previous %}
-						<a href="?page={{ novidades.previous_page_number }}">Mais Recentes</a>
+						<a href="?page={{ videos.previous_page_number }}">Mais Recentes</a>
 					{% endif %}
 					<span class="current">
 						Página {{ videos.number }} de {{ videos.paginator.num_pages }}
 					</span>
 					{% if videos.has_next %}
-						<a href="?page={{ novidades.next_page_number }}">Mais antigas</a>
+						<a href="?page={{ videos.next_page_number }}">Mais antigas</a>
 					{% endif %}
 				</span>
 			</div>
