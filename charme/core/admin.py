@@ -3,8 +3,7 @@ from .models import PostsHome, PostsBlog, Author, Contato, Videos, ImagensSlides
 
 
 class VideosModelAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'link', 'video_destaque', 'created_at')
-    date_hierarchy = 'created_at'
+    list_display = ('titulo', 'link', 'video_destaque')
 
 admin.site.register(PostsHome)
 admin.site.register(PostsBlog)

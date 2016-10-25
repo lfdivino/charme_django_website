@@ -78,7 +78,7 @@ class Videos(models.Model):
     class Meta:
         verbose_name_plural = 'Vídeos'
         verbose_name = 'Vídeo'
-        ordering = ('created_at',)
+        ordering = ('id',)
 
     def __str__(self):
         return self.titulo
