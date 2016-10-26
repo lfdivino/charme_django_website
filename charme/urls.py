@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
 from .core.views import home, index, contato, about, blog_page, blog_post, novidades_page, novidades_post, video
 
@@ -27,6 +27,5 @@ urlpatterns = [
     url(r'^blog/$', blog_page, name='blog'),
     url(r'^blog/post/(?P<post_id>[0-9]+)/$', blog_post, name='blog-post'),
     url(r'^videos/$', video, name='videos'),
-    #url(r'^', include('charme.core.urls')),
     url(r'^admin/', admin.site.urls),
 ]

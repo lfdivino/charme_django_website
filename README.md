@@ -1,5 +1,8 @@
 # CHARMÉ todo dia
 
+[![Build Status](https://travis-ci.org/lfdivino/charme_django_website.svg?branch=master)](https://travis-ci.org/lfdivino/charme_django_website)
+[![Code Health](https://landscape.io/github/lfdivino/charme_django_website/master/landscape.svg?style=flat)](https://landscape.io/github/lfdivino/charme_django_website/master)
+
 Website and blog
 
 Develop by Luiz Felipe do Divino <lf.divino@gmail.com>

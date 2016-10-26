@@ -31,7 +31,7 @@ def novidades_page(request):
     except PageNotAnInteger:
         novidades = paginator.page(1)
     except EmptyPage:
-        novidades = paginater.page(paginator.num_pages)
+        novidades = paginator.page(paginator.num_pages)
 
     context = {
         'novidades': novidades,
