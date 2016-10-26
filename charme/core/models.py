@@ -29,6 +29,7 @@ class PostsHome(models.Model):
     class Meta:
         verbose_name_plural = 'Posts da Home'
         verbose_name = 'Post da Home'
+        ordering = ('-created_date',)
 
     def __str__(self):
         return self.title
@@ -49,6 +50,7 @@ class PostsBlog(models.Model):
     class Meta:
         verbose_name_plural = 'Posts do Blog'
         verbose_name = 'Post do Blog'
+        ordering = ('-created_date',)
 
     def __str__(self):
         return self.title
@@ -64,6 +66,7 @@ class Contato(models.Model):
     class Meta:
         verbose_name_plural = 'Contatos'
         verbose_name = 'Contato'
+        ordering = ('-id',)
 
     def __str__(self):
         return self.nome
@@ -78,7 +81,7 @@ class Videos(models.Model):
     class Meta:
         verbose_name_plural = 'Vídeos'
         verbose_name = 'Vídeo'
-        ordering = ('id',)
+        ordering = ('-id',)
 
     def __str__(self):
         return self.titulo
@@ -87,6 +90,7 @@ class Videos(models.Model):
 class ImagensSlideshow(models.Model):
 
     link_imagem = models.CharField('Link da imagem', max_length=255)
+    show_home = models.BooleanField('Mostar na Home?', default=True)
 
     class Meta:
         verbose_name_plural = 'Imagens Slideshow'
