@@ -29,17 +29,21 @@
 		</div>
 			{% if videos %}
 				{% if video_destaque %}
-					<div class="row" style="text-align: center; margin-bottom: 30px;">
-						<h2 style="text-align: center;">Destaque: {{video_destaque.titulo}}</h2>
-						<iframe width="640" height="360" src="{{video_destaque.link}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
+					<a href="{{video_destaque.link}}" class="video_youtube">
+						<div class="row" style="text-align: center; margin-bottom: 30px;">
+							<h2 style="text-align: center;">Destaque: {{video_destaque.titulo}}</h2>
+							<iframe width="640" height="360" src="{{video_destaque.link}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</a>
 				{% endif %}
 			<div class="row">
 				{% for video in videos %}
-					<div class="col-md-4" style="margin-bottom: 10px;">
-						<h3 style="text-align: center;">{{video.titulo}}</h3>
-						<iframe width="360" height="200" src="{{video.link}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
+					<a href="{{video.link}}" class="video_youtube">
+						<div class="col-md-4" style="margin-bottom: 10px;">
+							<h3 style="text-align: center;">{{video.titulo}}</h3>
+							<iframe width="360" height="200" src="{{video.link}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</a>
 				{% endfor %}
 			</div>
 			<div class="pagination">
@@ -63,5 +67,15 @@
 			</div>
 		{% endif %}
 	</div>
+</div>
+<!-- Video / Generic Modal -->
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <!-- content dynamically inserted -->
+    </div>
+  </div>
+</div>
 </div>
 {% endblock %}
