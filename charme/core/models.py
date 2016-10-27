@@ -90,7 +90,6 @@ class Videos(models.Model):
 class ImagensSlideshow(models.Model):
 
     link_imagem = models.CharField('Link da imagem', max_length=255)
-    show_home = models.BooleanField('Mostar na Home?', default=True)
 
     class Meta:
         verbose_name_plural = 'Imagens Slideshow'
