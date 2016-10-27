@@ -77,6 +77,8 @@ class Videos(models.Model):
     titulo = models.CharField(u'Título', max_length=180)
     link = models.CharField('Link', max_length=255)
     video_destaque = models.BooleanField(u'Vídeo Destaque', default=False)
+    descricao = models.CharField('Descrição', max_length=255)
+    imagem_capa = models.CharField('Imagem capa', max_length=255)
 
     class Meta:
         verbose_name_plural = 'Vídeos'
