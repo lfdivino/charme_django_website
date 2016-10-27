@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
-from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow
+from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines
 from .forms import ContatoForm
 
 
@@ -22,6 +22,7 @@ def index(request):
 
 
 def novidades_page(request):
+    vitrines = Vitrines.objects.all().order_by('id')
     novidades_ids = PostsHome.objects.all().order_by('-created_date')
     paginator = Paginator(novidades_ids, 8)
 
@@ -34,22 +35,26 @@ def novidades_page(request):
         novidades = paginator.page(paginator.num_pages)
 
     context = {
+        'vitrines': vitrines[0],
         'novidades': novidades,
     }
     return render(request, 'novidades.html', context)
 
 
 def novidades_post(request, novidade_id=None):
+    vitrines = Vitrines.objects.all().order_by('id')
     if novidade_id:
         post = PostsHome.objects.filter(id=novidade_id)
 
     context = {
+        'vitrines': vitrines[0],
         'posts': post,
     }
     return render(request, 'novidades-post.html', context)
 
 
 def blog_page(request):
+    vitrines = Vitrines.objects.all().order_by('id')
     posts_ids = PostsBlog.objects.all().order_by('-created_date')
     paginator = Paginator(posts_ids, 8)
 
@@ -62,6 +67,7 @@ def blog_page(request):
         posts = paginator.page(paginator.num_pages)
 
     context = {
+        'vitrines': vitrines[0],
         'posts': posts,
     }
 
@@ -69,8 +75,10 @@ def blog_page(request):
 
 
 def blog_post(request, post_id=None):
+    vitrines = Vitrines.objects.all().order_by('id')
     posts = PostsBlog.objects.filter(id=post_id)
     context = {
+        'vitrines': vitrines[0],
         'posts': posts,
     }
 
@@ -78,6 +86,7 @@ def blog_post(request, post_id=None):
 
 
 def contato(request):
+    vitrines = Vitrines.objects.all().order_by('id')
     form = ContatoForm(request.POST or None)
 
     if form.is_valid():
@@ -95,11 +104,13 @@ def contato(request):
         contato_site.save()
 
         context = {
+            'vitrines': vitrines[0],
             'flag_enviado': True,
             'form': ContatoForm(),
         }
     else:
         context = {
+            'vitrines': vitrines[0],
             'flag_enviado': False,
             'form': ContatoForm(),
         }
@@ -108,10 +119,15 @@ def contato(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    vitrines = Vitrines.objects.all().order_by('id')
+    context = {
+        'vitrines': vitrines[0],
+    }
+    return render(request, 'about.html', context)
 
 
 def video(request):
+    vitrines = Vitrines.objects.all().order_by('id')
     videos_ids = Videos.objects.all().order_by('-id')
     video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
     paginator = Paginator(videos_ids, 12)
@@ -125,6 +141,7 @@ def video(request):
         videos = paginator.page(paginator.num_pages)
 
     context = {
+        'vitrines': vitrines[0],
         'videos': videos,
         'video_destaque': video_destaque[0] if video_destaque else False,
     }

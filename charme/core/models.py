@@ -99,3 +99,19 @@ class ImagensSlideshow(models.Model):
 
     def __str__(self):
         return self.link_imagem
+
+
+class Vitrines(models.Model):
+
+    link_vitrine_blog = models.CharField('Vitrine pagina blog', max_length=255)
+    link_vitrine_novidades = models.CharField('Vitrine página novidades', max_length=255)
+    link_vitrine_videos = models.CharField('Vitrine página vídeos', max_length=255)
+    link_vitrine_about = models.CharField('Vitrine página sobre nós', max_length=255)
+    link_vitrine_contato = models.CharField('Vitrine página contato', max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Vitrines do site'
+        verbose_name = 'Vitrine do site'
+
+    def __str__(self):
+        return 'Vitrines'

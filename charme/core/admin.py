@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PostsHome, PostsBlog, Author, Contato, Videos, ImagensSlideshow
+from .models import PostsHome, PostsBlog, Author, Contato, Videos, ImagensSlideshow, Vitrines
 
 
 class AuthorModelAdmin(admin.ModelAdmin):
@@ -36,3 +36,4 @@ admin.site.register(Author, AuthorModelAdmin)
 admin.site.register(Contato, ContatoModelAdmin)
 admin.site.register(Videos, VideosModelAdmin)
 admin.site.register(ImagensSlideshow)
+admin.site.register(Vitrines)

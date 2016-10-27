@@ -4,7 +4,8 @@ $('.video_youtube').on('click', function(e){
   // Store the query string variables and values
 	// Uses "jQuery Query Parser" plugin, to allow for various URL formats (could have extra parameters)
 	var queryString = $(this).attr('href');
-
+    var video_descricao = $(this).find('.video_desc').text();
+    var p_descricao = "<p>" + video_descricao + "</p>";
     // Prevent opening of external page
     e.preventDefault();
 
@@ -14,7 +15,7 @@ $('.video_youtube').on('click', function(e){
     var iFrameCode = '<iframe width="' + vidWidth + '" height="'+ vidHeight +'" scrolling="no" allowtransparency="true" allowfullscreen="true" src="' + queryString +'?rel=0&wmode=transparent&showinfo=0" frameborder="0"></iframe>';
 
     // Replace Modal HTML with iFrame Embed
-    $('#mediaModal .modal-body').html(iFrameCode);
+    $('#mediaModal .modal-body').html(iFrameCode + p_descricao);
     // Set new width of modal window, based on dynamic video content
     $('#mediaModal').on('show.bs.modal', function () {
         // Add video width to left and right padding, to get new width of modal window
