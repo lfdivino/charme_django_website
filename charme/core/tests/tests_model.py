@@ -1,5 +1,5 @@
 from django.test import TestCase
-from charme.core.models import Post, Author
+from charme.core.models import PostsBlog, Author, PostCategories
 
 
 class BlogTest(TestCase):
@@ -8,10 +8,13 @@ class BlogTest(TestCase):
     def setUp(self):
         self.author = Author(name="Luiz Felipe", email="lf.divino@gmail.com")
         self.author.save()
-        self.post = Post(
+        self.category = PostCategories(name="Moda")
+        self.category.save()
+        self.post = PostsBlog(
             title="Primeiro Post no site",
             body="Este é o primeiro post que eu faço no site Charme Todo Dia!",
-            author=self.author
+            author=self.author,
+            category=self.category
         )
         self.post.save()
 
