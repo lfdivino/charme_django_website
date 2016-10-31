@@ -58,7 +58,7 @@ class PostsBlog(models.Model):
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
     author = models.ForeignKey(Author)
-    category = models.ForeignKey(PostCategories)
+    # category = models.ForeignKey(PostCategories)
 
     class Meta:
         verbose_name_plural = 'Posts do Blog'
