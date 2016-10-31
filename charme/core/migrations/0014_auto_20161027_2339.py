@@ -23,16 +23,5 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Categoria',
                 'verbose_name_plural': 'Categorias',
             },
-        ),
-        migrations.AddField(
-            model_name='postsblog',
-            name='category',
-            field=models.ForeignKey(
-                default=1,
-                on_delete=django.db.models.deletion.CASCADE,
-                to='core.PostCategories',
-                null=True
-            ),
-            preserve_default=False,
-        ),
+        )
     ]

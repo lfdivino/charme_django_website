@@ -12,6 +12,17 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.AddField(
+            model_name='postsblog',
+            name='category',
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to='core.PostCategories',
+                null=True
+            ),
+            preserve_default=False,
+        ),
         migrations.RemoveField(
             model_name='postsblog',
             name='category',
