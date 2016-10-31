@@ -35,6 +35,18 @@ class PostsHome(models.Model):
         return self.title
 
 
+class PostCategories(models.Model):
+
+    name = models.CharField('Categoria', max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Categorias'
+        verbose_name = 'Categoria'
+
+    def __str__(self):
+        return self.name
+
+
 class PostsBlog(models.Model):
 
     title = models.CharField('Titulo', max_length=200)
@@ -46,6 +58,7 @@ class PostsBlog(models.Model):
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
     author = models.ForeignKey(Author)
+    category = models.ForeignKey(PostCategories)
 
     class Meta:
         verbose_name_plural = 'Posts do Blog'

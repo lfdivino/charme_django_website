@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
-from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines
+from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines, PostCategories
 from .forms import ContatoForm
 
 
@@ -53,9 +53,14 @@ def novidades_post(request, novidade_id=None):
     return render(request, 'novidades-post.html', context)
 
 
-def blog_page(request):
+def blog_page(request, category=None):
     vitrines = Vitrines.objects.all().order_by('id')
-    posts_ids = PostsBlog.objects.all().order_by('-created_date')
+    categories = PostCategories.objects.all()
+    if category:
+        posts_ids = PostsBlog.objects.filter(category=category).order_by('-created_date')
+    else:
+        posts_ids = PostsBlog.objects.all().order_by('-created_date')
+
     paginator = Paginator(posts_ids, 8)
 
     page = request.GET.get('page')
@@ -68,6 +73,7 @@ def blog_page(request):
 
     context = {
         'vitrines': vitrines[0],
+        'categories': categories,
         'posts': posts,
     }
 

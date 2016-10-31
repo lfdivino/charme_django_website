@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PostsHome, PostsBlog, Author, Contato, Videos, ImagensSlideshow, Vitrines
+from .models import PostsHome, PostCategories, PostsBlog, Author, Contato, Videos, ImagensSlideshow, Vitrines
 
 
 class AuthorModelAdmin(admin.ModelAdmin):
@@ -14,9 +14,9 @@ class PostHomeModelAdmin(admin.ModelAdmin):
 
 
 class PostBlogModelAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'brief_body', 'created_date')
+    list_display = ('title', 'author', 'brief_body', 'created_date', 'category')
     search_fields = ('title', 'author', 'brief_body')
-    list_filter = ('created_date',)
+    list_filter = ('category',)
 
 
 class ContatoModelAdmin(admin.ModelAdmin):
@@ -37,3 +37,4 @@ admin.site.register(Contato, ContatoModelAdmin)
 admin.site.register(Videos, VideosModelAdmin)
 admin.site.register(ImagensSlideshow)
 admin.site.register(Vitrines)
+admin.site.register(PostCategories)

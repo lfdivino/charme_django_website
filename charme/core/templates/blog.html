@@ -24,8 +24,8 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 				<i class="sl-icon-note"></i>
-				<h2>Bem vindo ao Blog da Tamara Gomes</h2>
-				<p>Confira aqui as últimas postagens do Blog da Tamara Gomes.</p>
+				<h2>Bem vindo ao meu BLOG!</h2>
+				<p>Confira as últimas postagens</p>
 			</div>
 		</div>
 		<div class="row">
@@ -45,6 +45,11 @@
 				{% endfor %}
 			</div>
 			<div class="col-md-3">
+				<h3>Categorias:</h3>
+				{% for category in categories %}
+					<a href="{% url 'blog' category.id%}"><p>{{category.name}}</p></a>
+				{% endfor %}
+
 				<h3>Todos os posts do Blog:</h3>
 				{% for post in posts %}
 					<a href="{% url 'blog-post' post.id %}"><p><small>{{ post.created_date|date:"d/m/y" }} - {{ post.title }}</small></p></a>
