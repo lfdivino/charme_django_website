@@ -14,9 +14,9 @@ class PostHomeModelAdmin(admin.ModelAdmin):
 
 
 class PostBlogModelAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'brief_body', 'created_date', 'category')
+    list_display = ('title', 'author', 'brief_body', 'created_date')
     search_fields = ('title', 'author', 'brief_body')
-    list_filter = ('category',)
+    # list_filter = ('category',)
 
 
 class ContatoModelAdmin(admin.ModelAdmin):
