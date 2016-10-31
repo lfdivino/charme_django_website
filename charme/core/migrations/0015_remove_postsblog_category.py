@@ -24,8 +24,4 @@ class Migration(migrations.Migration):
             ),
             preserve_default=False,
         ),
-        migrations.RemoveField(
-            model_name='postsblog',
-            name='category',
-        ),
     ]
