@@ -24,9 +24,4 @@ class Migration(migrations.Migration):
             ),
             preserve_default=False,
         ),
-        migrations.AlterField(
-            model_name='postcategories',
-            name='name',
-            field=models.CharField(default='1', max_length=255, verbose_name='Categoria'),
-        ),
     ]
