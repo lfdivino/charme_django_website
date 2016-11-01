@@ -15,27 +15,27 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='vitrines',
             name='titulo_vitrine_about',
-            field=models.CharField(max_length=180, null=True, verbose_name='Título vitrine página sobre nós'),
+            field=models.CharField(max_length=180, blank=True, verbose_name='Título vitrine página sobre nós'),
         ),
         migrations.AddField(
             model_name='vitrines',
             name='titulo_vitrine_blog',
-            field=models.CharField(max_length=180, null=True, verbose_name='Título vitrine página blog'),
+            field=models.CharField(max_length=180, blank=True, verbose_name='Título vitrine página blog'),
         ),
         migrations.AddField(
             model_name='vitrines',
             name='titulo_vitrine_contato',
-            field=models.CharField(max_length=180, null=True, verbose_name='Título vitrine página contato'),
+            field=models.CharField(max_length=180, blank=True, verbose_name='Título vitrine página contato'),
         ),
         migrations.AddField(
             model_name='vitrines',
             name='titulo_vitrine_novidades',
-            field=models.CharField(max_length=180, null=True, verbose_name='Título vitrine página novidades'),
+            field=models.CharField(max_length=180, blank=True, verbose_name='Título vitrine página novidades'),
         ),
         migrations.AddField(
             model_name='vitrines',
             name='titulo_vitrine_videos',
-            field=models.CharField(max_length=180, null=True, verbose_name='Título vitrine página vídeos'),
+            field=models.CharField(max_length=180, blank=True, verbose_name='Título vitrine página vídeos'),
         ),
         migrations.AlterField(
             model_name='vitrines',
