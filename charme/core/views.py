@@ -53,13 +53,9 @@ def novidades_post(request, novidade_id=None):
     return render(request, 'novidades-post.html', context)
 
 
-def blog_page(request, category=None):
+def blog_page(request):
     vitrines = Vitrines.objects.all().order_by('id')
-    categories = PostCategories.objects.all()
-    if category:
-        posts_ids = PostsBlog.objects.filter(category=category).order_by('-created_date')
-    else:
-        posts_ids = PostsBlog.objects.all().order_by('-created_date')
+    posts_ids = PostsBlog.objects.all().order_by('-created_date')
 
     paginator = Paginator(posts_ids, 8)
 
@@ -73,7 +69,6 @@ def blog_page(request, category=None):
 
     context = {
         'vitrines': vitrines[0],
-        'categories': categories,
         'posts': posts,
     }
 
@@ -132,9 +127,13 @@ def about(request):
     return render(request, 'about.html', context)
 
 
-def video(request):
+def video(request, category=None):
     vitrines = Vitrines.objects.all().order_by('id')
-    videos_ids = Videos.objects.all().order_by('-id')
+    categories = PostCategories.objects.all()
+    if category:
+        videos_ids = Videos.objects.filter(category=category).order_by('-id')
+    else:
+        videos_ids = Videos.objects.all().order_by('-id')
     video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
     paginator = Paginator(videos_ids, 12)
 
@@ -148,6 +147,7 @@ def video(request):
 
     context = {
         'vitrines': vitrines[0],
+        'categories': categories,
         'videos': videos,
         'video_destaque': video_destaque[0] if video_destaque else False,
     }

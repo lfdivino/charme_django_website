@@ -16,7 +16,7 @@ class PostHomeModelAdmin(admin.ModelAdmin):
 class PostBlogModelAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'brief_body', 'created_date')
     search_fields = ('title', 'author', 'brief_body')
-    # list_filter = ('category',)
+
 
 
 class ContatoModelAdmin(admin.ModelAdmin):
@@ -29,7 +29,7 @@ class VideosModelAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'link', 'video_destaque')
     search_fields = ('titulo', 'video_destaque')
     list_filter = ('video_destaque',)
-
+    list_filter = ('category',)
 admin.site.register(PostsHome, PostHomeModelAdmin)
 admin.site.register(PostsBlog, PostBlogModelAdmin)
 admin.site.register(Author, AuthorModelAdmin)

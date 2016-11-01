@@ -6,15 +6,17 @@
 	<div class="flexslider js-fullheight">
 		<ul class="slides">
 		<li style="background-image: url({{vitrines.link_vitrine_blog}});">
-			<!--<div class="overlay-gradient"></div>
+			<div class="overlay-gradient"></div>
 			<div class="container">
 				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 					<div class="slider-text-inner desc">
-						<h2 class="heading-section">Blog</h2>
-						&lt;!&ndash;<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>&ndash;&gt;
+						{% if vitrines.titulo_vitrine_blog %}
+							<h2 class="heading-section">{{vitrines.titulo_vitrine_blog}}</h2>
+							<!--<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>-->
+						{% endif %}
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</li>
 		</ul>
 	</div>
@@ -29,32 +31,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-9">
-				{% for post in posts %}
-					<div class="blog-inner">
-						<a href="{% url 'blog-post' post.id %}"><h3>{{ post.title }}</h3></a>
-							<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
-						<div class="image">
-							<a href="{% url 'blog-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="300px"/></a>
-						</div>
-						<div class="desc desc2">
-							<p>{{ post.brief_body }}</p>
-							<p><a href="{% url 'blog-post' post.id %}" class="btn btn-primary btn-luxe-primary">Ver mais</a></p>
-						</div>
+			{% for post in posts %}
+				<div class="blog-inner">
+					<a href="{% url 'blog-post' post.id %}"><h3>{{ post.title }}</h3></a>
+						<p>Enviado por {{ post.author.name }} em {{ post.created_date|date:"d/m/y" }}</p>
+					<div class="image">
+						<a href="{% url 'blog-post' post.id %}"><img src="{{ post.imagem }}" width="100%" height="300px"/></a>
 					</div>
-				{% endfor %}
-			</div>
-			<div class="col-md-3">
-				<h3>Categorias:</h3>
-				{% for category in categories %}
-					<a href="{% url 'blog' category.id%}"><p>{{category.name}}</p></a>
-				{% endfor %}
-
-				<h3>Todos os posts do Blog:</h3>
-				{% for post in posts %}
-					<a href="{% url 'blog-post' post.id %}"><p><small>{{ post.created_date|date:"d/m/y" }} - {{ post.title }}</small></p></a>
-				{% endfor %}
-			</div>
+					<div class="desc desc2">
+						<p>{{ post.brief_body }}</p>
+						<p><a href="{% url 'blog-post' post.id %}" class="btn btn-primary btn-luxe-primary">Ver mais</a></p>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 		<div class="pagination">
 			<span class="step-links">

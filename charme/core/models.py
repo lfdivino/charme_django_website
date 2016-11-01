@@ -58,7 +58,6 @@ class PostsBlog(models.Model):
     created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
     updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
     author = models.ForeignKey(Author)
-    category = models.ForeignKey(PostCategories)
 
     class Meta:
         verbose_name_plural = 'Posts do Blog'
@@ -92,6 +91,7 @@ class Videos(models.Model):
     video_destaque = models.BooleanField(u'Vídeo Destaque', default=False)
     descricao = models.CharField('Descrição', max_length=255)
     imagem_capa = models.CharField('Imagem capa', max_length=255)
+    category = models.ForeignKey(PostCategories)
 
     class Meta:
         verbose_name_plural = 'Vídeos'
@@ -116,11 +116,16 @@ class ImagensSlideshow(models.Model):
 
 class Vitrines(models.Model):
 
-    link_vitrine_blog = models.CharField('Vitrine pagina blog', max_length=255)
+    link_vitrine_blog = models.CharField('Vitrine página blog', max_length=255)
+    titulo_vitrine_blog = models.CharField('Título vitrine página blog', max_length=180, blank=True)
     link_vitrine_novidades = models.CharField('Vitrine página novidades', max_length=255)
+    titulo_vitrine_novidades = models.CharField('Título vitrine página novidades', max_length=180, blank=True)
     link_vitrine_videos = models.CharField('Vitrine página vídeos', max_length=255)
+    titulo_vitrine_videos = models.CharField('Título vitrine página vídeos', max_length=180, blank=True)
     link_vitrine_about = models.CharField('Vitrine página sobre nós', max_length=255)
+    titulo_vitrine_about = models.CharField('Título vitrine página sobre nós', max_length=180, blank=True)
     link_vitrine_contato = models.CharField('Vitrine página contato', max_length=255)
+    titulo_vitrine_contato = models.CharField('Título vitrine página contato', max_length=180, blank=True)
 
     class Meta:
         verbose_name_plural = 'Vitrines do site'

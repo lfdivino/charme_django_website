@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^contato/', contato, name='contato'),
     url(r'^about/', about, name='about'),
     url(r'^blog/$', blog_page, name='blog'),
-    url(r'^blog/(?P<category>[0-9]+)/$', blog_page, name='blog'),
     url(r'^blog/post/(?P<post_id>[0-9]+)/$', blog_post, name='blog-post'),
+    url(r'^videos/(?P<category>[0-9]+)/$', video, name='video'),
     url(r'^videos/$', video, name='videos'),
     url(r'^admin/', admin.site.urls),
 ]
