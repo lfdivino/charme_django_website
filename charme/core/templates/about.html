@@ -12,7 +12,9 @@
 					<div class="slider-text-inner desc">
 						{% if vitrines.titulo_vitrine_about %}
 							<h2 class="heading-section">{{vitrines.titulo_vitrine_about}}</h2>
-							<!--<p class="fh5co-lead">Quem são as pessoas responsáveis por trás de tanto Charmé e Beleza</p>-->
+							{% if vitrines.sub_titulo_vitrine_about %}
+								<p class="fh5co-lead">{{vitrines.sub_titulo_vitrine_about}}</p>
+							{% endif %}
 						{% endif %}
 					</div>
 				</div>

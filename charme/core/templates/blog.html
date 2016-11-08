@@ -12,7 +12,9 @@
 					<div class="slider-text-inner desc">
 						{% if vitrines.titulo_vitrine_blog %}
 							<h2 class="heading-section">{{vitrines.titulo_vitrine_blog}}</h2>
-							<!--<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>-->
+							{% if vitrines.titulo_vitrine_blog %}
+								<p class="fh5co-lead">{{vitrines.titulo_vitrine_blog}}</p>
+							{% endif %}
 						{% endif %}
 					</div>
 				</div>

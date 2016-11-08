@@ -135,7 +135,7 @@ def video(request, category=None):
     else:
         videos_ids = Videos.objects.all().order_by('-id')
     video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
-    paginator = Paginator(videos_ids, 12)
+    paginator = Paginator(videos_ids, 6)
 
     page = request.GET.get('page')
     try:

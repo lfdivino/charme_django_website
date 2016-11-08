@@ -118,14 +118,19 @@ class Vitrines(models.Model):
 
     link_vitrine_blog = models.CharField('Vitrine página blog', max_length=255)
     titulo_vitrine_blog = models.CharField('Título vitrine página blog', max_length=180, blank=True)
+    sub_titulo_vitrine_blog = models.CharField('Sub Título vitrine página blog', max_length=180, blank=True)
     link_vitrine_novidades = models.CharField('Vitrine página novidades', max_length=255)
     titulo_vitrine_novidades = models.CharField('Título vitrine página novidades', max_length=180, blank=True)
+    sub_titulo_vitrine_novidades = models.CharField('Sub Título vitrine página novidades', max_length=180, blank=True)
     link_vitrine_videos = models.CharField('Vitrine página vídeos', max_length=255)
     titulo_vitrine_videos = models.CharField('Título vitrine página vídeos', max_length=180, blank=True)
+    sub_titulo_vitrine_videos = models.CharField('Sub Título vitrine página vídeos', max_length=180, blank=True)
     link_vitrine_about = models.CharField('Vitrine página sobre nós', max_length=255)
     titulo_vitrine_about = models.CharField('Título vitrine página sobre nós', max_length=180, blank=True)
+    sub_titulo_vitrine_about = models.CharField('Sub Título vitrine página sobre nós', max_length=180, blank=True)
     link_vitrine_contato = models.CharField('Vitrine página contato', max_length=255)
     titulo_vitrine_contato = models.CharField('Título vitrine página contato', max_length=180, blank=True)
+    sub_titulo_vitrine_contato = models.CharField('Sub Título vitrine página contato', max_length=180, blank=True)
 
     class Meta:
         verbose_name_plural = 'Vitrines do site'

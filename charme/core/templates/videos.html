@@ -12,7 +12,9 @@
 					<div class="slider-text-inner desc">
 						{% if vitrines.titulo_vitrine_videos %}
 							<h2 class="heading-section">{{vitrines.titulo_vitrine_videos}}</h2>
-							<!--<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>-->
+							{% if vitrines.sub_titulo_vitrine_videos %}
+								<p class="fh5co-lead">{{vitrines.sub_titulo_vitrine_videos}}</p>
+							{% endif %}
 						{% endif %}
 					</div>
 				</div>
@@ -42,13 +44,15 @@
 			<div class="row">
 				<div class="col-md-9">
 					{% for video in videos %}
-						<a href="{{video.link}}" class="video_youtube">
-							<div class="col-md-6" style="margin-bottom: 10px;">
-								<h3 style="text-align: center;">{{video.titulo}}</h3>
-								<img src="{{video.imagem_capa}}" width="360" height="200">
-								<p class="video_desc">{{video.descricao}}</p>
-							</div>
-						</a>
+						{% if not video.video_destaque %}
+							<a href="{{video.link}}" class="video_youtube">
+								<div class="col-md-6" style="margin-bottom: 10px;">
+									<h3 style="text-align: center;">{{video.titulo}}</h3>
+									<img src="{{video.imagem_capa}}" width="360" height="200">
+									<p class="video_desc">{{video.descricao}}</p>
+								</div>
+							</a>
+						{% endif %}
 					{% endfor %}
 				</div>
 				<div class="col-md-3">
