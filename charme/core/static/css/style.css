@@ -1914,4 +1914,8 @@ figure {
 .image {
     margin-bottom: 3em;
 }
+
+.video_desc {
+  min-height: 5em;
+}
 /*# sourceMappingURL=style.css.map */

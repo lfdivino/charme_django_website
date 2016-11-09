@@ -14,7 +14,6 @@ class BlogTest(TestCase):
             title="Primeiro Post no site",
             body="Este é o primeiro post que eu faço no site Charme Todo Dia!",
             author=self.author,
-            category=self.category
         )
         self.post.save()
 

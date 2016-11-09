@@ -131,9 +131,9 @@ def video(request, category=None):
     vitrines = Vitrines.objects.all().order_by('id')
     categories = PostCategories.objects.all()
     if category:
-        videos_ids = Videos.objects.filter(category=category).order_by('-id')
+        videos_ids = Videos.objects.filter(category=category, video_destaque=False).order_by('-id')
     else:
-        videos_ids = Videos.objects.all().order_by('-id')
+        videos_ids = Videos.objects.all().filter(video_destaque=False).order_by('-id')
     video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
     paginator = Paginator(videos_ids, 6)
 
