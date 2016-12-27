@@ -2,6 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines, PostCategories
 from .forms import ContatoForm
+from django.db.models.functions import Lower
 
 
 def home(request):
@@ -129,7 +130,8 @@ def about(request):
 
 def video(request, category=None):
     vitrines = Vitrines.objects.all().order_by('id')
-    categories = PostCategories.objects.all()
+    categories = PostCategories.objects.all().order_by(Lower('name'))
+    print (categories)
     if category:
         videos_ids = Videos.objects.filter(category=category, video_destaque=False).order_by('-id')
     else:
