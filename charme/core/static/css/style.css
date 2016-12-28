@@ -36,8 +36,8 @@ a:hover {
 }
 
 p, ul, ol {
-  margin-bottom: 1.5em;
-  font-size: 18px;
+  margin-bottom: 1em;
+  font-size: 14px;
   color: #848484;
   font-weight: 300;
   font-family: "Open Sans", Arial, serif;
@@ -1504,6 +1504,9 @@ figure {
   font-weight: 400 !important;
   color: rgba(0, 0, 0, 0.3);
 }
+#fh5co-contact-section .contact-info ul {
+  font-size: 14px;
+}
 #fh5co-contact-section .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -1918,4 +1921,5 @@ figure {
 .video_desc {
   min-height: 5em;
 }
+
 /*# sourceMappingURL=style.css.map */
