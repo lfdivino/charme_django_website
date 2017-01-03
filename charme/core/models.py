@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 
 from ckeditor.fields import RichTextField
@@ -21,10 +22,21 @@ class PostsHome(models.Model):
     title = models.CharField('Titulo', max_length=200)
     imagem_vitrine = models.CharField('Imagem vitrine home', max_length=255)
     imagem = models.CharField('Imagem do Post', max_length=255)
-    brief_body = models.TextField('Resumo da Novidade', max_length=200, default='Resumo do post da novidade.')
+    imagem_lateral = models.CharField(
+        'Imagem lateral do Post', max_length=255, blank=True
+    )
+    brief_body = models.TextField(
+        'Resumo da Novidade',
+        max_length=200,
+        default='Resumo do post da novidade.'
+    )
     body = RichTextField('Corpo do Post')
-    created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
-    updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
+    created_date = models.DateTimeField(
+        'Data de criação', auto_now_add=True, auto_now=False
+    )
+    updated_date = models.DateTimeField(
+        'Data de alteração', auto_now_add=False, auto_now=True
+    )
 
     class Meta:
         verbose_name_plural = 'Posts da Home'
@@ -53,10 +65,16 @@ class PostsBlog(models.Model):
     imagem_vitrine = models.CharField('Imagem vitrine home', max_length=255)
     imagem = models.CharField('Imagem do Post', max_length=255)
     video = models.CharField('Video', max_length=255, blank=True)
-    brief_body = models.TextField('Resumo do Post', max_length=200, default='Resumo do post do blog.')
+    brief_body = models.TextField(
+        'Resumo do Post', max_length=200, default='Resumo do post do blog.'
+    )
     body = RichTextField('Corpo do Post')
-    created_date = models.DateTimeField('Data de criação', auto_now_add=True, auto_now=False)
-    updated_date = models.DateTimeField('Data de alteração', auto_now_add=False, auto_now=True)
+    created_date = models.DateTimeField(
+        'Data de criação', auto_now_add=True, auto_now=False
+    )
+    updated_date = models.DateTimeField(
+        'Data de alteração', auto_now_add=False, auto_now=True
+    )
     author = models.ForeignKey(Author)
 
     class Meta:
@@ -116,21 +134,51 @@ class ImagensSlideshow(models.Model):
 
 class Vitrines(models.Model):
 
-    link_vitrine_blog = models.CharField('Vitrine página blog', max_length=255)
-    titulo_vitrine_blog = models.CharField('Título vitrine página blog', max_length=180, blank=True)
-    sub_titulo_vitrine_blog = models.CharField('Sub Título vitrine página blog', max_length=180, blank=True)
-    link_vitrine_novidades = models.CharField('Vitrine página novidades', max_length=255)
-    titulo_vitrine_novidades = models.CharField('Título vitrine página novidades', max_length=180, blank=True)
-    sub_titulo_vitrine_novidades = models.CharField('Sub Título vitrine página novidades', max_length=180, blank=True)
-    link_vitrine_videos = models.CharField('Vitrine página vídeos', max_length=255)
-    titulo_vitrine_videos = models.CharField('Título vitrine página vídeos', max_length=180, blank=True)
-    sub_titulo_vitrine_videos = models.CharField('Sub Título vitrine página vídeos', max_length=180, blank=True)
-    link_vitrine_about = models.CharField('Vitrine página sobre nós', max_length=255)
-    titulo_vitrine_about = models.CharField('Título vitrine página sobre nós', max_length=180, blank=True)
-    sub_titulo_vitrine_about = models.CharField('Sub Título vitrine página sobre nós', max_length=180, blank=True)
-    link_vitrine_contato = models.CharField('Vitrine página contato', max_length=255)
-    titulo_vitrine_contato = models.CharField('Título vitrine página contato', max_length=180, blank=True)
-    sub_titulo_vitrine_contato = models.CharField('Sub Título vitrine página contato', max_length=180, blank=True)
+    link_vitrine_blog = models.CharField(
+        'Vitrine página blog', max_length=255
+    )
+    titulo_vitrine_blog = models.CharField(
+        'Título vitrine página blog', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_blog = models.CharField(
+        'Sub Título vitrine página blog', max_length=180, blank=True
+    )
+    link_vitrine_novidades = models.CharField(
+        'Vitrine página novidades', max_length=255
+    )
+    titulo_vitrine_novidades = models.CharField(
+        'Título vitrine página novidades', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_novidades = models.CharField(
+        'Sub Título vitrine página novidades', max_length=180, blank=True
+    )
+    link_vitrine_videos = models.CharField(
+        'Vitrine página vídeos', max_length=255
+    )
+    titulo_vitrine_videos = models.CharField(
+        'Título vitrine página vídeos', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_videos = models.CharField(
+        'Sub Título vitrine página vídeos', max_length=180, blank=True
+    )
+    link_vitrine_about = models.CharField(
+        'Vitrine página sobre nós', max_length=255
+    )
+    titulo_vitrine_about = models.CharField(
+        'Título vitrine página sobre nós', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_about = models.CharField(
+        'Sub Título vitrine página sobre nós', max_length=180, blank=True
+    )
+    link_vitrine_contato = models.CharField(
+        'Vitrine página contato', max_length=255
+    )
+    titulo_vitrine_contato = models.CharField(
+        'Título vitrine página contato', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_contato = models.CharField(
+        'Sub Título vitrine página contato', max_length=180, blank=True
+    )
 
     class Meta:
         verbose_name_plural = 'Vitrines do site'
