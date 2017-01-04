@@ -22,9 +22,6 @@ class PostsHome(models.Model):
     title = models.CharField('Titulo', max_length=200)
     imagem_vitrine = models.CharField('Imagem vitrine home', max_length=255)
     imagem = models.CharField('Imagem do Post', max_length=255)
-    imagem_lateral = models.CharField(
-        'Imagem lateral do Post', max_length=255, blank=True
-    )
     brief_body = models.TextField(
         'Resumo da Novidade',
         max_length=200,
@@ -37,6 +34,7 @@ class PostsHome(models.Model):
     updated_date = models.DateTimeField(
         'Data de alteração', auto_now_add=False, auto_now=True
     )
+    men_line = models.BooleanField("Linha masculina", default=False)
 
     class Meta:
         verbose_name_plural = 'Posts da Home'
@@ -178,6 +176,9 @@ class Vitrines(models.Model):
     )
     sub_titulo_vitrine_contato = models.CharField(
         'Sub Título vitrine página contato', max_length=180, blank=True
+    )
+    imagem_lateral_novidade = models.CharField(
+        'Imagem lateral das Novidades', max_length=255, blank=True
     )
 
     class Meta:

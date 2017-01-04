@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines, PostCategories
 from .forms import ContatoForm
 from django.db.models.functions import Lower
+import random
 
 
 def home(request):
@@ -10,13 +11,24 @@ def home(request):
 
 
 def index(request):
-    posts = PostsHome.objects.all().order_by('-created_date')[:7]
-    posts_blog = PostsBlog.objects.all().order_by('-created_date')[:3]
+    newest_posts = PostsHome.objects.all().filter(men_line=False).order_by('-created_date')[:4]
+    posts_list = PostsHome.objects.all().filter(men_line=False)[:3]
+    posts = [
+        posts_list[
+            random.randint(0, len(posts_list)-1),
+            random.randint(0, len(posts_list)-1),
+            random.randint(0, len(posts_list)-1),
+        ]
+    ]
+    men_posts = PostsHome.objects.all().filter(
+        men_line=True
+    ).order_by('-created_date')[:3]
     imagens_slideshow = ImagensSlideshow.objects.all().order_by('-id')[:4]
 
     context = {
+        'newest_posts': newest_posts,
         'posts': posts,
-        'posts_blogs': posts_blog,
+        'men_posts': men_posts,
         'imagens_slideshow': imagens_slideshow,
     }
     return render(request, 'home.html', context)
@@ -133,10 +145,13 @@ def video(request, category=None):
     categories = PostCategories.objects.all().order_by(Lower('name'))
     print (categories)
     if category:
-        videos_ids = Videos.objects.filter(category=category, video_destaque=False).order_by('-id')
+        videos_ids = Videos.objects.filter(
+            category=category, video_destaque=False).order_by('-id')
     else:
-        videos_ids = Videos.objects.all().filter(video_destaque=False).order_by('-id')
-    video_destaque = Videos.objects.all().filter(video_destaque=True).order_by('-id')
+        videos_ids = Videos.objects.all().filter(
+            video_destaque=False).order_by('-id')
+    video_destaque = Videos.objects.all().filter(
+        video_destaque=True).order_by('-id')
     paginator = Paginator(videos_ids, 6)
 
     page = request.GET.get('page')
