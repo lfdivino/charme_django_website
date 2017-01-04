@@ -21,7 +21,7 @@
 	<div class="col-half col-half-color">
 		<div class="row-half">
 			{% for newest_post in newest_posts %}
-				<a href="{% url 'novidade-post' newest_post.id %}" class="col-half-inner grid-item" style="background-image: url({{ post.imagem_vitrine }});">
+				<a href="{% url 'novidade-post' newest_post.id %}" class="col-half-inner grid-item" style="background-image: url({{ newest_post.imagem_vitrine }});">
 					<div class="desc2">
 						<h3>{{ newest_post.title }}</h3>
 						<span>{{ newest_post.brief_body }}</span>
