@@ -20,13 +20,6 @@
 <div id="fh5co-section">
 	<div class="col-half col-half-color">
 		<div class="row-half">
-<!--            <div class="col-half-inner col-half-inner-bg">
-                <div class="desc">
-                    <h2>Últimas do BLOG!</h2>
-                    <p>Confira aqui as últimas postagens do Blog da Tamara Gomes.</p>
-                    <p><a href="{% url 'blog' %}" class="btn btn-primary btn-outline with-arrow">Ver mais<i class="icon-arrow-right22"></i></a></p>
-                </div>
-            </div>-->
 			{% for newest_post in newest_posts %}
 				<a href="{% url 'novidade-post' newest_post.id %}" class="col-half-inner grid-item" style="background-image: url({{ post.imagem_vitrine }});">
 					<div class="desc2">
