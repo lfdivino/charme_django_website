@@ -116,33 +116,19 @@
 			<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 				<div class="fh5co-intro animate-box">
 					<div class="row">
-						<div class="col-md-4 text-center">
-							<div class="testimony">
-								<span class="quote"><i class="icon-quotes-right"></i></span>
-								<blockquote>
-									<p style="font-size: 20px">Eu amei! Tem cada pulseira, brincos, colares, anéis... Lindos demais, eu recomendo!</p>
-									<span>Lourdes Aparecida, via <a href="#" class="icon-facebook2 facebook-color"></a></span>
-								</blockquote>
-							</div>
-						</div>
-						<div class="col-md-4 text-center">
-							<div class="testimony">
-								<span class="quote"><i class="icon-quotes-right"></i></span>
-								<blockquote>
-									<p>Adorei, valeu a pena conhecer, com certeza vou voltar mais vezes.</p>
-									<span>Jana Farias, via <a href="#" class="icon-facebook2 facebook-color"></a></span>
-								</blockquote>
-							</div>
-						</div>
-						<div class="col-md-4 text-center">
-							<div class="testimony">
-								<span class="quote"><i class="icon-quotes-right"></i></span>
-								<blockquote>
-									<p>Peças lindas e um ótimo atendimento... Com certeza voltarei!</p>
-									<span>Erica Martins, via <a href="#" class="icon-facebook2 facebook-color"></a></span>
-								</blockquote>
-							</div>
-						</div>
+						{% if depoimentos %}
+							{% for depoimento in depoimentos %}
+								<div class="col-md-4 text-center">
+									<div class="testimony">
+										<span class="quote"><i class="icon-quotes-right"></i></span>
+										<blockquote>
+											<p style="font-size: 20px">{{ depoimento.texto }}</p>
+											<span>{{ depoimento.name }}, via <a href="#" class="icon-facebook2 facebook-color"></a></span>
+										</blockquote>
+									</div>
+								</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 				</div>
 			</div>

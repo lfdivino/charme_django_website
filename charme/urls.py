@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from .core.views import home, index, contato, about,\
-    novidades_page, novidades_post, video
+    novidades_page, men_page, loja, novidades_post, video
 
 urlpatterns = [
     url(r'^$', home, name='home'),
@@ -27,7 +27,9 @@ urlpatterns = [
         novidades_post,
         name='novidade-post'
     ),
+    url(r'men/$', men_page, name='men'),
     url(r'^contato/', contato, name='contato'),
+    url(r'^loja/', loja, name='loja'),
     url(r'^about/', about, name='about'),
     url(r'^videos/(?P<category>[0-9]+)/$', video, name='video'),
     url(r'^videos/$', video, name='videos'),

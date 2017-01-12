@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
-from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, Vitrines, PostCategories
+from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, \
+    Vitrines, PostCategories, Depoimentos
 from .forms import ContatoForm
 from django.db.models.functions import Lower
 import random
@@ -25,19 +26,20 @@ def index(request):
         men_line=True
     ).order_by('-created_date')[:3]
     imagens_slideshow = ImagensSlideshow.objects.all().order_by('-id')[:4]
-
+    depoimentos = Depoimentos.objects.all().order_by('-id')[:3]
     context = {
         'newest_posts': newest_posts,
         'posts': posts,
         'men_posts': men_posts,
         'imagens_slideshow': imagens_slideshow,
+        'depoimentos': depoimentos
     }
     return render(request, 'home.html', context)
 
 
 def novidades_page(request):
     vitrines = Vitrines.objects.all().order_by('id')
-    novidades_ids = PostsHome.objects.all().order_by('-created_date')
+    novidades_ids = PostsHome.objects.all().filter(men_line=False).order_by('-created_date')
     paginator = Paginator(novidades_ids, 8)
 
     page = request.GET.get('page')
@@ -53,6 +55,26 @@ def novidades_page(request):
         'novidades': novidades,
     }
     return render(request, 'novidades.html', context)
+
+
+def men_page(request):
+    vitrines = Vitrines.objects.all().order_by('id')
+    novidades_ids = PostsHome.objects.all().filter(men_line=True).order_by('-created_date')
+    paginator = Paginator(novidades_ids, 8)
+
+    page = request.GET.get('page')
+    try:
+        novidades = paginator.page(page)
+    except PageNotAnInteger:
+        novidades = paginator.page(1)
+    except EmptyPage:
+        novidades = paginator.page(paginator.num_pages)
+
+    context = {
+        'vitrines': vitrines[0],
+        'novidades': novidades,
+    }
+    return render(request, 'men.html', context)
 
 
 def novidades_post(request, novidade_id=None):
@@ -139,6 +161,14 @@ def about(request):
         'vitrines': vitrines[0],
     }
     return render(request, 'about.html', context)
+
+
+def loja(request):
+    vitrines = Vitrines.objects.all().order_by('id')
+    context = {
+        'vitrines': vitrines[0],
+    }
+    return render(request, 'loja.html', context)
 
 
 def video(request, category=None):

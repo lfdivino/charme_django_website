@@ -1,10 +1,16 @@
 from django.contrib import admin
-from .models import PostsHome, PostCategories, PostsBlog, Author, Contato, Videos, ImagensSlideshow, Vitrines
+from .models import PostsHome, PostCategories, PostsBlog, Author, Contato, \
+    Videos, ImagensSlideshow, Vitrines, Depoimentos
 
 
 class AuthorModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'email')
     search_fields = ('name', 'email')
+
+
+class DepoimentosModelAdmin(admin.ModelAdmin):
+    list_display = ('name', 'texto')
+    search_fields = ('name', 'texto')
 
 
 class PostHomeModelAdmin(admin.ModelAdmin):
@@ -16,7 +22,6 @@ class PostHomeModelAdmin(admin.ModelAdmin):
 class PostBlogModelAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'brief_body', 'created_date')
     search_fields = ('title', 'author', 'brief_body')
-
 
 
 class ContatoModelAdmin(admin.ModelAdmin):
@@ -38,3 +43,4 @@ admin.site.register(Videos, VideosModelAdmin)
 admin.site.register(ImagensSlideshow)
 admin.site.register(Vitrines)
 admin.site.register(PostCategories)
+admin.site.register(Depoimentos)

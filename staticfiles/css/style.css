@@ -1925,4 +1925,14 @@ figure {
 .men-line {
   background-color: #000;
 }
+
+.test_fixed {
+  position: fixed;
+  float:left;
+  background-color:#F6F6F6;
+  border:1px solid #FFF;
+  border-bottom:1px solid #CCC;
+  width:98%;
+  padding-left:2%;
+}
 /*# sourceMappingURL=style.css.map */

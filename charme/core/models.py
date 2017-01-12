@@ -45,6 +45,14 @@ class PostsHome(models.Model):
         return self.title
 
 
+class Depoimentos(models.Model):
+    name = models.CharField('Nome do Cliente', max_length=255)
+    texto = models.TextField('Depoimento', max_length=400)
+
+    def __str__(self):
+        return self.name
+
+
 class PostCategories(models.Model):
 
     name = models.CharField('Categoria', max_length=255, default='1')
