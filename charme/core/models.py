@@ -185,6 +185,24 @@ class Vitrines(models.Model):
     sub_titulo_vitrine_contato = models.CharField(
         'Sub Título vitrine página contato', max_length=180, blank=True
     )
+    link_vitrine_men = models.CharField(
+        'Vitrine página linha men', max_length=255
+    )
+    titulo_vitrine_men = models.CharField(
+        'Título vitrine página linha men', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_men = models.CharField(
+        'Sub Título vitrine página linha men', max_length=180, blank=True
+    )
+    link_vitrine_loja = models.CharField(
+        'Vitrine página loja', max_length=255
+    )
+    titulo_vitrine_loja = models.CharField(
+        'Título vitrine página loja', max_length=180, blank=True
+    )
+    sub_titulo_vitrine_loja = models.CharField(
+        'Sub Título vitrine página loja', max_length=180, blank=True
+    )
     imagem_lateral_novidade = models.CharField(
         'Imagem lateral das Novidades', max_length=255, blank=True
     )
