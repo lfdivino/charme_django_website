@@ -12,12 +12,14 @@ def home(request):
 
 
 def index(request):
-    newest_posts = PostsHome.objects.all().filter(men_line=False).order_by('-created_date')[:4]
-    posts_list = PostsHome.objects.all().filter(men_line=False).order_by('-created_date')[4:]
+    newest_posts = PostsHome.objects.all().filter(men_line=False).order_by(
+        '-created_date')[:4]
+    posts_list = PostsHome.objects.all().filter(men_line=False).order_by(
+        '-created_date')[4:]
     posts = []
     if posts_list:
         for i in range(0, len(posts_list) if len(posts_list) < 3 else 3):
-            posts.append(posts_list[random.randint(0, len(posts_list))])
+            posts.append(posts_list[random.randint(0, len(posts_list) - 1)])
     men_posts = PostsHome.objects.all().filter(
         men_line=True
     ).order_by('-created_date')[:3]
