@@ -654,7 +654,6 @@ figure {
   left: 0;
   right: 0;
   content: '';
-  /*background: rgba(0, 0, 0, 0.4);*/
   z-index: 1;
 }
 #fh5co-hero .flexslider .flex-control-nav {
@@ -1934,5 +1933,9 @@ figure {
   border-bottom:1px solid #CCC;
   width:98%;
   padding-left:2%;
+}
+
+.copyright {
+  margin: 10%;
 }
 /*# sourceMappingURL=style.css.map */

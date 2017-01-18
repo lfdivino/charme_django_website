@@ -9,7 +9,7 @@ $(function () {
             elemento.css({
                 'position': 'fixed',
                 'bottom': '15%',
-                'top': '15%'
+                'top': '10%'
             });
 
             $('.element-fixed').fadeIn();
