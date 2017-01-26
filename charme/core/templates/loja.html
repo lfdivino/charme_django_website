@@ -5,21 +5,15 @@
 <aside id="fh5co-hero" class="js-fullheight">
 	<div class="flexslider js-fullheight">
 		<ul class="slides">
-		<li style="background-image: url({{vitrines.link_vitrine_loja}});">
-			<div class="overlay-gradient"></div>
-			<div class="container">
-				<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-					<div class="slider-text-inner desc">
-						{% if vitrines.titulo_vitrine_loja %}
-							<h2 class="heading-section">{{vitrines.titulo_vitrine_loja}}</h2>
-							{% if vitrines.sub_titulo_vitrine_loja %}
-								<p class="fh5co-lead">{{vitrines.sub_titulo_vitrine_loja}}</p>
-							{% endif %}
-						{% endif %}
+			{% for imagem in imagens_slideshow %}
+				<li style="background-image: url({{imagem.link_imagem}});">
+					<div class="overlay-gradient"></div>
+					<div class="container">
+						<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+						</div>
 					</div>
-				</div>
-			</div>
-		</li>
+				</li>
+			{% endfor %}
 		</ul>
 	</div>
 </aside>

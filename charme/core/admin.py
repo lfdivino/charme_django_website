@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import PostsHome, PostCategories, PostsBlog, Author, Contato, \
-    Videos, ImagensSlideshow, Vitrines, Depoimentos
+    Videos, ImagensSlideshow, Vitrines, Depoimentos, ImagensSlideshowLoja
 
 
 class AuthorModelAdmin(admin.ModelAdmin):
@@ -35,6 +35,7 @@ admin.site.register(Author, AuthorModelAdmin)
 admin.site.register(Contato, ContatoModelAdmin)
 admin.site.register(Videos, VideosModelAdmin)
 admin.site.register(ImagensSlideshow)
+admin.site.register(ImagensSlideshowLoja)
 admin.site.register(Vitrines)
 admin.site.register(PostCategories)
 admin.site.register(Depoimentos)

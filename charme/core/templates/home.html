@@ -91,7 +91,7 @@
                 </div>
             </a>
         {% endfor %}
-		<div class="portfolio-grid-item-color" style="background-color: #000; color: #fff;">
+		<div class="portfolio-grid-item-color-men" style="background-color: #000; color: #fff;">
 			<div class="desc">
 				<h2>Charme Men</h2>
 				<p>Confira aqui as novidades da linha para Homens!</p>
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 		{% for men_post in men_posts %}
-            <a href="{% url 'novidade-post' men_post.id %}" class="portfolio-grid-item men-line" style="background-color: #000; color: #fff; background-image: url({{ post.imagem_vitrine }});">
+            <a href="{% url 'novidade-post' men_post.id %}" class="portfolio-grid-item-men" style="background-color: #000; color: #fff; background-image: url({{ men_post.imagem_vitrine }});">
                 <div class="desc2">
                     <h3>{{ men_post.title }}</h3>
                     <span>{{ men_post.brief_body }}</span>

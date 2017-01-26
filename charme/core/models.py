@@ -138,6 +138,18 @@ class ImagensSlideshow(models.Model):
         return self.link_imagem
 
 
+class ImagensSlideshowLoja(models.Model):
+
+    link_imagem = models.CharField('Link da imagem', max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Imagens Slideshow Loja'
+        verbose_name = 'Imagem Slideshow Loja'
+
+    def __str__(self):
+        return self.link_imagem
+
+
 class Vitrines(models.Model):
 
     link_vitrine_blog = models.CharField(

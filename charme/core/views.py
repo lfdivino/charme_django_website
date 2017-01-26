@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import PostsHome, PostsBlog, Contato, Videos, ImagensSlideshow, \
-    Vitrines, PostCategories, Depoimentos
+    Vitrines, PostCategories, Depoimentos, ImagensSlideshowLoja
 from .forms import ContatoForm
 from django.db.models.functions import Lower
 import random
@@ -163,8 +163,10 @@ def about(request):
 
 def loja(request):
     vitrines = Vitrines.objects.all().order_by('id')
+    imagens_slideshow = ImagensSlideshowLoja.objects.all().order_by('-id')[:4]
     context = {
         'vitrines': vitrines[0],
+        'imagens_slideshow': imagens_slideshow,
     }
     return render(request, 'loja.html', context)
 
