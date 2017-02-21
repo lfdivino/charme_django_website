@@ -50,7 +50,9 @@
 			</div>
 			<div class="col-md-4">
 				{% if vitrines.imagem_lateral_novidade %}
-					<img src="{{ vitrines.imagem_lateral_novidade }}" width="100%" height="400px"/>
+					<div class="element-fixed" style="padding: 5%;">
+						<img src="{{ vitrines.imagem_lateral_novidade }}" width="100%" style="min-height: 700px"/>
+					</div>
 				{% endif %}
 			</div>
 		</div>
